@@ -71,19 +71,8 @@ body {
   margin-bottom: 10px;
 }
 
-.masthead-nav {
-	margin-top:10px;
-}
-
 .masthead-nav > li {
   display: inline-block;
-  padding-right: 0;
-  padding-left: 0;
-  font-size: 16px;
-  font-weight: bold;
-  color: #fff; /* IE8 proofing */
-  color: rgba(255,255,255,.75);
-  border-bottom: 2px solid transparent;
 }
 
 .masthead-nav > li + li {
