@@ -25,6 +25,7 @@
   </head>
 
   <body>
+    <a name="home"></a>
 
     <div class="site-wrapper">
 
@@ -32,41 +33,118 @@
 
         <div class="cover-container">
 
-          <div class="masthead clearfix">
+          <div class="masthead clearfix" id="nav">
             <div class="inner">
-              <h3 class="masthead-brand">Alexandra Hipolito</h3>
+                <a href="#home"><h2 class="masthead-brand">Alexandra Hipolito</h2></a>
               <nav>
                 <ul class="nav masthead-nav">
+                    <li><a href="#about">about</a></li>
+                    <li><a href="#work">work</a></li>
                     <li><a href="files/AlexHipolito-WebsiteResume.pdf" target="_blank">résumé</a></li>
-                    <li><a href="mailto:alexheepo@gmail.com">contact</a></li>
-				<!-- when pages are ready
-				  <li><a href="#">about</a></li>
-				  <li><a href="#">cv</a></li>
-                   -->
+                    <li><a href="#contact">contact</a></li>
                 </ul>
               </nav>
             </div>
           </div>
 
           <div class="inner cover">
+            
             <h1 class="cover-heading">Hello, I'm Alex.</h1>
               <p class="lead">I'm a <b>Digital Business Analyst</b> and <b>Certified Scrum Master</b> who speaks geek and business to solve problems.</p>
             <p class="lead">
-              <a href="https://www.linkedin.com/in/alexhippo" target="_blank" class="btn btn-lg btn-default">How can I help?</a>
+              <a href="#contact" class="btn btn-lg btn-default">How can I help?</a>
             </p>
           </div>
-
-          <!--<div class="mastfoot">
-            <div class="inner">
-              <p>Portfolio site by alexhippo. Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-            </div>-->
           </div>
-
         </div>
-
       </div>
+      
+      <!-- About -->
+      <a name="about"></a>
+      <div class="container">
+        <h2>About</h2> 
+          <div class="row marketing">
+            <div class="col-sm-6">
+                <p><img src="images/alexandra-hipolito.jpg" alt="profile image of Alex Hipolito" class="profile">
+            </div>
+            <div class="col-sm-6 description">
+                <p>I'm a Digital Business Analyst and Certified Scrum Master based in Sydney, Australia with 3+ years of experience in <u>analysing and delivering</u> core functionality to award winning mobile apps.</p>
+                <p>I also enjoy <u>web development</u> as a hobby and I am currently pursuing a FreeCodeCamp Front End Web Development Certificate, expected to complete by the end of 2016.</p>
+                <p>I believe that building a business, technical &amp; team <u>foundation first</u> and having a <u>beta mindset</u> is key to solving a problem.</p>
+                <p>When I'm not doing any of the above, I'm usually swimming, boxing, or cooking.</p>
+            </div>
+          </div>
+          
+          <h3>Specialties</h3>
+          <div class="row">
+              <div class="col-sm-2"><h3><i class="fa fa-search" aria-hidden="true"></i></h3> <p>elicitation & analysis</p></div>
+              <div class="col-sm-2"><h3><i class="fa fa-book" aria-hidden="true"></i></h3> <p>technical writing</p></div>
+              <div class="col-sm-2"><h3><i class="fa fa-line-chart" aria-hidden="true"></i></h3> <p>iteration management</p></div>
+              <div class="col-sm-2"><h3><i class="fa fa-html5" aria-hidden="true"></i></h3> <p>html</p></div>
+              <div class="col-sm-2"><h3><i class="fa fa-css3" aria-hidden="true"></i></h3> <p>css</p></div>
+              <div class="col-sm-2"><h3><i class="fa fa-terminal" aria-hidden="true"></i></h3> <p>javascript</p></div>
+          </div>
+      
+      </div>
+         
+      <!-- Work -->
+      <a name="work"></a> 
+         <div class="container">
+            <h2>Work</h2>
+            <h3>Business Analysis & Iteration Management</h3>
+            <div class="row">
+                <div class="col-md-4">
+                  <a href="https://www.commbank.com.au/personal/online-banking/commbank-app.html" target="_blank"><img src="files/portfolio/retailbanking-account.jpg" class="img-responsive"></a>
+                  <h4>CommBank app</h4>
+                  <p>Flagship mobile app (Android & iOS) for one of Australia's largest banks, with over 2 million active customers per week.</p>
+                    <p><b>Projects:</b> Cards, Accounts</p>
+                    <p><b>Responsibilities:</b> requirements elicitation (including legacy business rules), user story writing & mapping, workshop & sprint ceremony facilitation, product ownership, business verification</p>
+                  <p><a class="btn btn-default" href="https://www.commbank.com.au/personal/online-banking/commbank-app.html" target="_blank" role="button">Download <i class="fa fa-download" aria-hidden="true"></i></a></p>
+                </div>
+                <div class="col-md-4">
+                  <a href="https://www.commbank.com.au/personal/online-banking/commbank-app-for-tablet.html" target="_blank"><img src="files/portfolio/retailbankingapp-tablet.jpg" class="img-responsive"></a>
+                  <h4>CommBank app for Tablet</h4>
+                  <p>Revamp of the original NetBank for Tablet app to bring a more user-friendly design and improved DIY financial tracking to our customers.</p>
+                    <p><b>Projects:</b> Core Payments - BSB, BPAY, Address Book, Scheduled</p>
+                    <p><b>Responsibilities:</b> requirements elicitation (including legacy business rules), user story writing & mapping, workshop and sprint ceremony facilitation, business verification</p>
+                  <p><a class="btn btn-default" href="https://www.commbank.com.au/personal/online-banking/commbank-app-for-tablet.html" target="_blank" role="button">Download <i class="fa fa-download" aria-hidden="true"></i></a></p>
+               </div>
+                <div class="col-md-4">
+                  <a href="https://www.commbank.com.au/personal/investments/mywealth.html" target="_blank"><img src="files/portfolio/onlinesharetrading-website.jpg" class="img-responsive"></a>
+                  <h4>MyWealth</h4>
+                  <p>A CommBank product that focused on easy online share trading and investing. The website has since been decommissioned but the core concepts have been integrated into NetBank, CommBank app, and CommSec.</p>
+                    <p><b>Projects:</b> Media, Community, Origination</p>
+                    <p><b>Responsibilities:</b> requirements elicitation, user story writing, defect management, manual quality assurance</p>
+                  <p><a class="btn btn-default" href="https://www.commbank.com.au/personal/investments/mywealth.html" target="_blank" role="button">View details &raquo;</a></p>
+                </div>
+          </div>
+         
+         <!-- Contact -->
+        <a name="contact"></a> 
+         <div class="container contact">
+             <h2>Contact</h2>
+             <p>I'm currently looking for my next adventure. If this sounds like what you're looking for, I'd love to meet up over coffee and find out how I can help! Email me at <a href="mailto:alexheepo@gmail.com">alexheepo@gmail.com</a> or contact me on one of my social networks:</p>
+             <div class="row">
+                <div class="col-sm-4">
+                    <h2><a href="https://www.linkedin.com/in/alexhippo" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></h2>
+                </div>
+                <div class="col-sm-4">
+                    <h2><a href="https://github.com/alexhippo" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></h2>
+                </div>
+                <div class="col-sm-4">
+                    <h2><a href="https://www.freecodecamp.com/alexhippo" target="_blank"><i class="fa fa-free-code-camp" aria-hidden="true"></i></a></h2>
+                </div>
+             </div>
+         </div>
+             
+         <!-- Footer -->
+         <footer>
+             <p>&copy; 2016 Alexandra Hipolito</p>
+         </footer>
+             
+         </div>
+      
 
-    </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -76,7 +154,9 @@
 	<!-- Custom styles for this template -->
 	<link href="https://fonts.googleapis.com/css?family=Homemade+Apple|Rubik" rel="stylesheet">
     <link href="css/portfoliocover.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="files/activescroll.js"></script>
 	</body>	
 </html>
 

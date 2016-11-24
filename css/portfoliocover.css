@@ -39,6 +39,15 @@ body {
 
 }
 
+#nav.scrollActive{
+    background-color:#282826;
+    background-image:none;
+}
+
+.inner {
+    margin-top:0px;
+}
+
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
   display: table;
@@ -66,13 +75,21 @@ body {
 /*
  * Header
  */
+
 .masthead-brand {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  font-family: 'Homemade Apple', cursive;
+}
+
+.masthead-nav {
+    margin-bottom:20px;
 }
 
 .masthead-nav > li {
   display: inline-block;
+    
+  
 }
 
 .masthead-nav > li + li {
@@ -126,6 +143,43 @@ body {
   font-family: 'Homemade Apple', cursive;
 }
 
+/*
+ * Containers
+ */
+
+.container {
+    padding-top: 100px;
+    padding-bottom:50px;
+}
+
+
+
+/*
+ * About
+ */
+
+.profile {
+    width:200px;
+    border:1px;
+    border-radius:50%;
+}
+
+.description {
+    text-align:justify;
+    font-size:15px;
+}
+
+/*
+ * Portfolio images
+ */
+.portfolio-img {
+    width: auto;
+}
+
+
+
+
+
 
 /*
  * Footer
@@ -145,7 +199,8 @@ body {
   /* Pull out the header and footer */
   .masthead {
     position: fixed;
-    top: 0;
+    top:0;
+    z-index:1;
   }
   .mastfoot {
     position: fixed;
@@ -167,6 +222,8 @@ body {
   .masthead,
   .mastfoot,
   .cover-container {
-    width: 700px;
+    width: 100%;
   }
+
+
 }
