@@ -25,9 +25,8 @@
   </head>
 
   <body>
-    <a name="home"></a>
 
-    <div class="site-wrapper">
+    <div class="site-wrapper" id="home">
 
       <div class="site-wrapper-inner">
 
@@ -41,7 +40,7 @@
                     <li><a href="#about">about</a></li>
                     <li><a href="#work">work</a></li>
                     <li><a href="files/AlexHipolito-WebsiteResume.pdf" target="_blank">résumé</a></li>
-                    <li><a href="#contact">contact</a></li>
+                    <li><a href="#email">contact</a></li>
                 </ul>
               </nav>
             </div>
@@ -52,7 +51,7 @@
             <h1 class="cover-heading">Hello, I'm Alex.</h1>
               <p class="lead">I'm a <b>Digital Business Analyst</b> and <b>Certified Scrum Master</b> who speaks geek and business to solve problems.</p>
             <p class="lead">
-              <a href="#contact" class="btn btn-lg btn-default">How can I help?</a>
+              <a href="#email" class="btn btn-lg btn-default">How can I help?</a>
             </p>
           </div>
           </div>
@@ -60,8 +59,7 @@
       </div>
       
       <!-- About -->
-      <a name="about"></a>
-      <div class="container">
+      <div class="container" id="about">
         <h2>About</h2> 
           <div class="row marketing">
             <div class="col-sm-6">
@@ -77,24 +75,23 @@
           
           <h3>Specialties</h3>
           <div class="row">
-              <div class="col-sm-2"><h3><i class="fa fa-search" aria-hidden="true"></i></h3> <p>elicitation & analysis</p></div>
-              <div class="col-sm-2"><h3><i class="fa fa-book" aria-hidden="true"></i></h3> <p>technical writing</p></div>
-              <div class="col-sm-2"><h3><i class="fa fa-line-chart" aria-hidden="true"></i></h3> <p>iteration management</p></div>
-              <div class="col-sm-2"><h3><i class="fa fa-html5" aria-hidden="true"></i></h3> <p>html</p></div>
-              <div class="col-sm-2"><h3><i class="fa fa-css3" aria-hidden="true"></i></h3> <p>css</p></div>
-              <div class="col-sm-2"><h3><i class="fa fa-terminal" aria-hidden="true"></i></h3> <p>javascript</p></div>
+              <div class="col-sm-2"><i class="fa fa-search fa-3x" aria-hidden="true"></i> <p>elicitation & analysis</p></div>
+              <div class="col-sm-2"><i class="fa fa-book fa-3x" aria-hidden="true"></i> <p>technical writing</p></div>
+              <div class="col-sm-2"><i class="fa fa-line-chart fa-3x" aria-hidden="true"></i> <p>iteration management</p></div>
+              <div class="col-sm-2"><i class="fa fa-html5 fa-3x" aria-hidden="true"></i> <p>html</p></div>
+              <div class="col-sm-2"><i class="fa fa-css3 fa-3x" aria-hidden="true"></i> <p>css</p></div>
+              <div class="col-sm-2"><i class="fa fa-terminal fa-3x" aria-hidden="true"></i> <p>javascript</p></div>
           </div>
       
       </div>
          
       <!-- Work -->
-      <a name="work"></a> 
-         <div class="container">
+         <div class="container" id="work">
             <h2>Work</h2>
             <h3>Business Analysis & Iteration Management</h3>
             <div class="row">
                 <div class="col-md-4">
-                  <a href="https://www.commbank.com.au/personal/online-banking/commbank-app.html" target="_blank"><img src="files/portfolio/retailbanking-account.jpg" class="img-responsive"></a>
+                  <a href="https://www.commbank.com.au/personal/online-banking/commbank-app.html" target="_blank"><img src="files/portfolio/retailbanking-account.jpg" class="img-responsive" alt="Example use case of CommBank app"></a>
                   <h4>CommBank app</h4>
                   <p>Flagship mobile app (Android & iOS) for one of Australia's largest banks, with over 2 million active customers per week.</p>
                     <p><b>Projects:</b> Cards, Accounts</p>
@@ -102,7 +99,7 @@
                   <p><a class="btn btn-default" href="https://www.commbank.com.au/personal/online-banking/commbank-app.html" target="_blank" role="button">Download <i class="fa fa-download" aria-hidden="true"></i></a></p>
                 </div>
                 <div class="col-md-4">
-                  <a href="https://www.commbank.com.au/personal/online-banking/commbank-app-for-tablet.html" target="_blank"><img src="files/portfolio/retailbankingapp-tablet.jpg" class="img-responsive"></a>
+                  <a href="https://www.commbank.com.au/personal/online-banking/commbank-app-for-tablet.html" target="_blank"><img src="files/portfolio/retailbankingapp-tablet.jpg" class="img-responsive" alt="Example use case for commBank app for Tablet"></a>
                   <h4>CommBank app for Tablet</h4>
                   <p>Revamp of the original NetBank for Tablet app to bring a more user-friendly design and improved DIY financial tracking to our customers.</p>
                     <p><b>Projects:</b> Core Payments - BSB, BPAY, Address Book, Scheduled</p>
@@ -110,7 +107,7 @@
                   <p><a class="btn btn-default" href="https://www.commbank.com.au/personal/online-banking/commbank-app-for-tablet.html" target="_blank" role="button">Download <i class="fa fa-download" aria-hidden="true"></i></a></p>
                </div>
                 <div class="col-md-4">
-                  <a href="https://www.commbank.com.au/personal/investments/mywealth.html" target="_blank"><img src="files/portfolio/onlinesharetrading-website.jpg" class="img-responsive"></a>
+                  <a href="https://www.commbank.com.au/personal/investments/mywealth.html" target="_blank"><img src="files/portfolio/onlinesharetrading-website.jpg" class="img-responsive" alt="Example use case of MyWealth"></a>
                   <h4>MyWealth</h4>
                   <p>A CommBank product that focused on easy online share trading and investing. The website has since been decommissioned but the core concepts have been integrated into NetBank, CommBank app, and CommSec.</p>
                     <p><b>Projects:</b> Media, Community, Origination</p>
@@ -120,19 +117,18 @@
           </div>
          
          <!-- Contact -->
-        <a name="contact"></a> 
-         <div class="container contact">
+         <div class="container contact" id="email">
              <h2>Contact</h2>
              <p>I'm currently looking for my next adventure. If this sounds like what you're looking for, I'd love to meet up over coffee and find out how I can help! Email me at <a href="mailto:alexheepo@gmail.com">alexheepo@gmail.com</a> or contact me on one of my social networks:</p>
              <div class="row">
                 <div class="col-sm-4">
-                    <h2><a href="https://www.linkedin.com/in/alexhippo" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></h2>
+                    <a href="https://www.linkedin.com/in/alexhippo" target="_blank"><i class="fa fa-linkedin fa-3x" aria-hidden="true"></i></a>
                 </div>
                 <div class="col-sm-4">
-                    <h2><a href="https://github.com/alexhippo" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></h2>
+                    <a href="https://github.com/alexhippo" target="_blank"><i class="fa fa-github fa-3x" aria-hidden="true"></i></a>
                 </div>
                 <div class="col-sm-4">
-                    <h2><a href="https://www.freecodecamp.com/alexhippo" target="_blank"><i class="fa fa-free-code-camp" aria-hidden="true"></i></a></h2>
+                    <a href="https://www.freecodecamp.com/alexhippo" target="_blank"><i class="fa fa-free-code-camp fa-3x" aria-hidden="true"></i></a>
                 </div>
              </div>
          </div>
@@ -152,7 +148,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<!-- Custom styles for this template -->
-	<link href="https://fonts.googleapis.com/css?family=Homemade+Apple|Rubik" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Homemade+Apple%7CRubik" rel="stylesheet">
     <link href="css/portfoliocover.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
