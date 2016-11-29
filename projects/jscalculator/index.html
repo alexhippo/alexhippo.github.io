@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <script src="calc.js"></script>
+    
+    </head>
+    
+    <body>
+        <h2>Input</h2>
+            <input type="text" id="display" value="0">
+        <h2>Operations</h2>
+            <button id="plus" class="operations" onclick="input(this.id, this.class)" value="+">+</button><br>
+            <button id="minus" class="operations" onclick="input(this.id, this.class)" value="-">-</button><br>
+            <button id="multiply" class="operations" onclick="input(this.id, this.class)" value="*">x</button><br>
+            <button id="divide" class="operations" onclick="input(this.id, this.class)" value="/">/</button><br>
+            <button id="equal" onclick="execute()">=</button><br>
+            <button id="clear" onclick="reset()">clear</button><br>
+        <h2>Numeric pad</h2>
+            <button id="one" class="number" onclick="input(this.id, this.class)" value="1">1</button><br>
+            <button id="two" class="number" onclick="input(this.id, this.class)" value="2">2</button><br>
+            <button id="three" class="number" onclick="input(this.id, this.class)" value="3" class="number">3</button><br>
+            <button id="four" class="number" onclick="input(this.id, this.class)" value="4">4</button><br>
+            <button id="five" class="number" onclick="input(this.id, this.class)" value="5">5</button><br>
+            <button id="six" class="number" onclick="input(this.id, this.class)" value="6">6</button><br>
+            <button id="seven" class="number" onclick="input(this.id, this.class)" value="7">7</button><br>
+            <button id="eight" class="number" onclick="input(this.id, this.class)" value="8">8</button><br>
+            <button id="nine" class="number" onclick="input(this.id, this.class)" value="9">9</button><br>
+            <button id="zero" class="number" onclick="input(this.id, this.class)" value="0">0</button><br>
+            <button id="decimal" class="number" onclick="input(this.id, this.class)" value=".">.</button><br>
+        <h2>Result</h2>
+            <input type="text" id="result">
+    
+    </body>
+
+
+
+</html>
