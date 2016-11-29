@@ -4,7 +4,7 @@
 
 function reset() {
     document.getElementById("display").value = "0";
-    document.getElementById("result").value = "";
+    document.getElementById("result").value = "0";
 }
 
 function input(id) {
