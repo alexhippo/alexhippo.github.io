@@ -23,6 +23,8 @@ function input(id) {
         } else {
             if ((id === "decimal") && (document.getElementById("display").value.split('.').length === 2)) { //if there is already a decimal point, do not put another decimal point
                 return false;
+            } else if (document.getElementById("display").value.length >= 20) { //avoiding large numbers
+                return false;
             } else {
                 document.getElementById("display").value += document.getElementById(id).value; 
                 document.getElementById("result").value += document.getElementById(id).value; 
