@@ -1,15 +1,18 @@
 <html>
     <head>
- 
         <title>Alexandra Hipolito | Projects - Pomodoro Timer</title>
     </head>
 
     <body>
         <ul>
             <li id="minutes">25</li>
-            <li id="seconds">25</li>
+            <li id="seconds">00</li>
         </ul>
+        <button id="startPomo" onclick="pomodoro(1, 'p');">Start</button>
+        <button id="startBreak" onclick="pomodoro(5, 'b');">Start Break</button>
         
+        
+        <footer>&copy; Alexandra Hipolito 2016. Soothing alert sounds from <a href="http://lifehacker.com/5931463/make-your-notifications-less-intrusive-with-these-soothing-alerts">Lifehacker</a></footer>
     </body>
-       <script src="../pomodoro/pomodoro.js"></script>
+    <script src="../pomodoro/pomodoro.js"></script>
 </html>
