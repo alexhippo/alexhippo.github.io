@@ -1,5 +1,4 @@
 window.onload = function () {
-    document.getElementById("startBreak").style.visibility = 'hidden';
 
 }
 
@@ -12,19 +11,38 @@ var breakTime = new Audio('../pomodoro/timeforabreak.mp3'),
     minutesDisplay = document.getElementById("minutes"),
     secondsDisplay = document.getElementById("seconds");
 
-function stopTimer() {
+function resetTimer() {
+    minutesDisplay.innerHTML = "25";
     secondsDisplay.innerHTML = "00";
-    minutesDisplay.innerHTML = "00";
     clearInterval(pomoInterval);
 }
 
+function pauseTimer() {
+    clearInterval(pomoInterval); 
+}
 
-function pomodoro(interval, type) {  
+function increment() {
+    minutesDisplay.innerHTML = Number(minutesDisplay.innerHTML) + 1; //To-Do: add 0 formatting
+}
+
+function decrement() {
+    minutesDisplay.innerHTML = Number(minutesDisplay.innerHTML) - 1; //To-Do: add 0 formatting
+}
+
+function pomodoro(type) {  
     //Generate times - startTime and endTime
         startTime = new Date(), 
         endTime = new Date();
     //Create endTime - add 25 minutes
-        endTime.setMinutes(endTime.getMinutes() + interval);
+        if (type === 'b') {
+            intervalMin = 5;
+            intervalSec = 0;
+        } else {
+            intervalMin = Number(minutesDisplay.innerHTML);
+            intervalSec = Number(secondsDisplay.innerHTML);
+        }
+        endTime.setMinutes(endTime.getMinutes() + intervalMin);
+        endTime.setSeconds(endTime.getSeconds() + intervalSec);
 
     //Find the difference between the times - pomoTimeSeconds & pomoTimeMinutes
     var diffInMs = endTime - startTime,
