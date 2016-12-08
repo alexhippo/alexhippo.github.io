@@ -1,18 +1,28 @@
 window.onload = function () {
     document.getElementById("startBreak").style.visibility = 'hidden';
+
 }
 
+
+//Pre-load audio
+var breakTime = new Audio('../pomodoro/timeforabreak.mp3'),
+    workTime = new Audio('../pomodoro/timeforpomodoro.mp3'),
+
+//Break down the times into minutes and seconds
+    minutesDisplay = document.getElementById("minutes"),
+    secondsDisplay = document.getElementById("seconds");
+
+function stopTimer() {
+    secondsDisplay.innerHTML = "00";
+    minutesDisplay.innerHTML = "00";
+    clearInterval(pomoInterval);
+}
+
+
 function pomodoro(interval, type) {  
-    //Pre-load audio
-    var breakTime = new Audio('../pomodoro/timeforabreak.mp3'),
-        workTime = new Audio('../pomodoro/timeforpomodoro.mp3'),
     //Generate times - startTime and endTime
         startTime = new Date(), 
-        endTime = new Date(), 
-    //Break down the times into minutes and seconds
-        minutesDisplay = document.getElementById("minutes"),
-        secondsDisplay = document.getElementById("seconds");
-
+        endTime = new Date();
     //Create endTime - add 25 minutes
         endTime.setMinutes(endTime.getMinutes() + interval);
 
