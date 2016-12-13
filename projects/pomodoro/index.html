@@ -1,25 +1,36 @@
 <html>
     <head>
         <title>Alexandra Hipolito | Projects - Pomodoro Timer</title>
+        <link rel="stylesheet" href="../pomodoro/pomodoro.css" type="text/css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Comfortaa:700|Lato" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
 
     <body>
-        <ul>
-            <li id="minutes">25</li>
-            <li id="seconds">00</li>
-        </ul>
+        <div class="header">
+            <div class="container clearfix">
+            <h1 id="status">Time to work!</h1>
+            </div>
+        </div>
         
-        <button id="plus" onclick="increment();">+</li>
-        <button id="minus" onclick="decrement();">-</li>
+        <div id="timer" class="container">
+            <a id="plus" onclick="increment();" class="customise" alt="increase time by 1 minute"><i class="fa fa-arrow-up fa-3x" aria-hidden="true"></i></a><br>
+            <span id="minutes" class="time">25</span>
+            <span class="time">:</span>
+            <span id="seconds" class="time">00</span><br>
+            <a id="minus" onclick="decrement();" class="customise" alt="decrease time by 1 minute"><i class="fa fa-arrow-down fa-3x" aria-hidden="true"></i></a><br>
+            
+            
+            <i class="fa fa-play fa-3x buttons" aria-hidden="true" onclick="pomodoro('p');" aria-label="Start Pomodoro"></i>
+            <i class="fa fa-coffee fa-3x buttons" aria-hidden="true" onclick="pomodoro('b');" aria-label="Start Break" class="buttons"></i>
+            <i class="fa fa-pause fa-3x buttons" aria-hidden="true" onclick="pauseTimer();" aria-label="Pause Timer" class="buttons"></i>
+            <i class="fa fa-eject fa-3x buttons" aria-hidden="true" onclick="resetTimer();" aria-label="Reset Timer" class="buttons"></i>
+            
+        </div>
         
-        <button id="startPomo" onclick="pomodoro('p');">Start</button><!--replace 25 with minutes.innerHTML-->
-        <button id="startBreak" onclick="pomodoro('b');">Start Break</button>
-        
-        <button id="stop" onclick="resetTimer();">Reset</button>
-        <button id="pause" onclick="pauseTimer();">Pause</button>
-        
-        
-        <footer>&copy; Alexandra Hipolito 2016. Soothing alert sounds from <a href="http://lifehacker.com/5931463/make-your-notifications-less-intrusive-with-these-soothing-alerts">Lifehacker</a></footer>
+        <footer>&copy; <a href="http://alexhippo.github.io" target="_blank">Alexandra Hipolito</a> 2016. Soothing alert sounds from <a href="http://lifehacker.com/5931463/make-your-notifications-less-intrusive-with-these-soothing-alerts">Lifehacker</a></footer>
     </body>
     <script src="../pomodoro/pomodoro.js"></script>
+    
 </html>

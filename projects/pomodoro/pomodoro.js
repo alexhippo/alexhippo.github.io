@@ -1,5 +1,4 @@
 window.onload = function () {
-
 }
 
 
@@ -10,23 +9,36 @@ var breakTime = new Audio('../pomodoro/timeforabreak.mp3'),
 //Break down the times into minutes and seconds
     minutesDisplay = document.getElementById("minutes"),
     secondsDisplay = document.getElementById("seconds");
+    
 
 function resetTimer() {
     minutesDisplay.innerHTML = "25";
     secondsDisplay.innerHTML = "00";
+    document.getElementById("status").innerHTML = "Time to work!";
+    document.getElementById("plus").style.visibility = "visible";
+    document.getElementById("minus").style.visibility = "visible";
     clearInterval(pomoInterval);
 }
 
 function pauseTimer() {
     clearInterval(pomoInterval); 
+    document.getElementById("status").innerHTML = "Paused";
 }
 
 function increment() {
-    minutesDisplay.innerHTML = Number(minutesDisplay.innerHTML) + 1; //To-Do: add 0 formatting
+    if (Number(minutesDisplay.innerHTML) < 10) {
+        minutesDisplay.innerHTML = "0" + (Number(minutesDisplay.innerHTML) + 1);
+    } else {
+        minutesDisplay.innerHTML = Number(minutesDisplay.innerHTML) + 1;
+    }
 }
 
 function decrement() {
-    minutesDisplay.innerHTML = Number(minutesDisplay.innerHTML) - 1; //To-Do: add 0 formatting
+    if (Number(minutesDisplay.innerHTML) < 10) {
+        minutesDisplay.innerHTML = "0" + (Number(minutesDisplay.innerHTML) - 1);
+    } else {
+        minutesDisplay.innerHTML = Number(minutesDisplay.innerHTML) - 1;
+    }
 }
 
 function pomodoro(type) {  
@@ -37,12 +49,18 @@ function pomodoro(type) {
         if (type === 'b') {
             intervalMin = 5;
             intervalSec = 0;
+            document.getElementById("status").innerHTML = "Break time!";
         } else {
             intervalMin = Number(minutesDisplay.innerHTML);
             intervalSec = Number(secondsDisplay.innerHTML);
+            document.getElementById("status").innerHTML = "Let's get to work!";
         }
         endTime.setMinutes(endTime.getMinutes() + intervalMin);
         endTime.setSeconds(endTime.getSeconds() + intervalSec);
+    
+    //Hide arrows while pomodoro is in progress
+    document.getElementById("plus").style.visibility = "hidden";
+    document.getElementById("minus").style.visibility = "hidden";
 
     //Find the difference between the times - pomoTimeSeconds & pomoTimeMinutes
     var diffInMs = endTime - startTime,
@@ -119,14 +137,20 @@ function pomodoro(type) {
 
     function timeForABreak() {
         breakTime.play();
-        alert("Pomodoro Timer: Time for a break!");
-        document.getElementById("startBreak").style.visibility = 'visible';
+        alert("Pomodoro Timer: Great work! Time for a break.");
+        document.getElementById("status").innerHTML = "Great work! Time for a break.";
+        minutesDisplay.innerHTML = "05";
+        secondsDisplay.innerHTML = "00";
+        document.getElementById("plus").style.visibility = "visible";
+        document.getElementById("minus").style.visibility = "visible";
     }
     
     function timeForWork() {
         workTime.play();
         alert("Pomodoro Timer: Time to work!");
-        document.getElementById("startBreak").style.visibility = 'hidden';
+        document.getElementById("status").innerHTML = "Time to work!";
+        document.getElementById("plus").style.visibility = "visible";
+        document.getElementById("minus").style.visibility = "visible";
     }
     
     pomoInterval = setInterval(pomoCountDown, 1000);
