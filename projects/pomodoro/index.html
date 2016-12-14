@@ -10,11 +10,14 @@
     <body>
         <div class="header">
             <div class="container clearfix">
-            <h1 id="status">Time to work!</h1>
+            <h1 id="status">Let's get to work!</h1>
             </div>
         </div>
         
         <div id="timer" class="container">
+            <button id="setPomo" class="buttons" onclick="setPomodoro();"><i class="fa fa-briefcase fa-4x" aria-hidden="true" aria-label="Set Pomodoro"></i></button>
+            <button id="setBreak" class="buttons" onclick="setBreak();"><i class="fa fa-coffee fa-4x" aria-hidden="true" aria-label="Set Break"></i></button><br>
+            
             <button id="plus" onclick="increment();" class="customise" alt="increase time by 1 minute"><i class="fa fa-arrow-up fa-3x" aria-hidden="true"></i></button><br>
             <span id="minutes" class="time">25</span>
             <span class="time">:</span>
@@ -22,9 +25,7 @@
             <button id="minus" onclick="decrement();" class="customise" alt="decrease time by 1 minute"><i class="fa fa-arrow-down fa-3x" aria-hidden="true"></i></button><br>
             
             <div id="control">
-                <button id="setPomo" class="buttons" onclick="setPomodoro();"><i class="fa fa-laptop fa-4x" aria-hidden="true"></i></button>
-                <button id="setBreak" class="buttons" onclick="setBreak();"><i class="fa fa-coffee fa-4x" aria-hidden="true" aria-label="Start Break"></i></button><br>
-                <button id="startPomo" class="buttons" onclick="pomodoro('p');"><i class="fa fa-play fa-4x" aria-hidden="true"  aria-label="Start Pomodoro"></i></button>
+                <button id="startPomo" class="buttons" onclick="pomodoro();"><i class="fa fa-play fa-4x" aria-hidden="true"  aria-label="Start Pomodoro"></i></button>
                 <button id="pause" class="buttons" onclick="pauseTimer();"><i class="fa fa-pause fa-4x" aria-hidden="true"  aria-label="Pause Timer"></i></button>
                 <button id="reset" class="buttons" onclick="resetTimer();"><i class="fa fa-eject fa-4x" aria-hidden="true"  aria-label="Reset Timer"></i></button>
             </div>   

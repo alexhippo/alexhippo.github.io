@@ -3,6 +3,7 @@ a {
     color:#000;
 }
 
+
 /* Header */
 .header {
     width: 100%;
@@ -25,7 +26,6 @@ a {
 }
 
 /* Timer */
-
 #timer {
     width: 100%;
     text-align:center;
@@ -36,6 +36,7 @@ a {
 .time {
     font-size:100px;
     font-family: 'Comfortaa', cursive;
+    color: #e75a40;
 }
 
 .customise {
@@ -49,12 +50,12 @@ a {
 }
 
 .buttons {
-    margin-left:20px;
-    margin-right:20px;
+    margin-left:10px;
+    margin-right:10px;
     margin-bottom:20px;
     width:65px;
     height:65px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
     background:none;
     border:none;
 }
