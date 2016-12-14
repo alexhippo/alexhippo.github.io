@@ -17,43 +17,71 @@ function resetTimer() {
     document.getElementById("status").innerHTML = "Time to work!";
     document.getElementById("plus").style.visibility = "visible";
     document.getElementById("minus").style.visibility = "visible";
+    
+    //Enable start buttons when timer is reset
+    document.getElementById("startPomo").disabled = false;
+    document.getElementById("setBreak").disabled = false;
+    document.getElementById("setPomo").disabled = false;
     clearInterval(pomoInterval);
 }
 
 function pauseTimer() {
     clearInterval(pomoInterval); 
     document.getElementById("status").innerHTML = "Paused";
+    document.getElementById("startPomo").disabled = false;
+
 }
 
 function increment() {
-    if (Number(minutesDisplay.innerHTML) < 10) {
-        minutesDisplay.innerHTML = "0" + (Number(minutesDisplay.innerHTML) + 1);
+    newMinutes = (Number(minutesDisplay.innerHTML)) + 1;
+    if (newMinutes < 10) {
+        minutesDisplay.innerHTML = "0" + newMinutes;
     } else {
-        minutesDisplay.innerHTML = Number(minutesDisplay.innerHTML) + 1;
+        if (newMinutes > 59) {
+            return false;
+        } else {
+            minutesDisplay.innerHTML = newMinutes;
+        }
     }
 }
 
 function decrement() {
-    if (Number(minutesDisplay.innerHTML) < 10) {
-        minutesDisplay.innerHTML = "0" + (Number(minutesDisplay.innerHTML) - 1);
-    } else {
-        minutesDisplay.innerHTML = Number(minutesDisplay.innerHTML) - 1;
+    newMinutes = (Number(minutesDisplay.innerHTML)) - 1;
+    if (newMinutes < 10) {
+        if (newMinutes <= 0) {
+            return false;
+        } else {
+        minutesDisplay.innerHTML = "0" + newMinutes;
+        }
+    } else {    
+            minutesDisplay.innerHTML = newMinutes;
+        }
     }
+
+function setBreak() {
+    minutesDisplay.innerHTML = "05";
+    secondsDisplay.innerHTML = "00";
+    document.getElementById("status").innerHTML = "Break time!";
 }
+
+function setPomodoro() {
+    minutesDisplay.innerHTML = "25";
+    secondsDisplay.innerHTML = "00";
+    document.getElementById("status").innerHTML = "Let's get to work!";
+}
+
 
 function pomodoro(type) {  
     //Generate times - startTime and endTime
         startTime = new Date(), 
         endTime = new Date();
-    //Create endTime - add 25 minutes
+    //Create endTime - add 25 minutes or take in the current time
         if (type === 'b') {
-            intervalMin = 5;
-            intervalSec = 0;
-            document.getElementById("status").innerHTML = "Break time!";
+            intervalMin = Number(minutesDisplay.innerHTML);
+            intervalSec = Number(secondsDisplay.innerHTML);
         } else {
             intervalMin = Number(minutesDisplay.innerHTML);
             intervalSec = Number(secondsDisplay.innerHTML);
-            document.getElementById("status").innerHTML = "Let's get to work!";
         }
         endTime.setMinutes(endTime.getMinutes() + intervalMin);
         endTime.setSeconds(endTime.getSeconds() + intervalSec);
@@ -61,6 +89,11 @@ function pomodoro(type) {
     //Hide arrows while pomodoro is in progress
     document.getElementById("plus").style.visibility = "hidden";
     document.getElementById("minus").style.visibility = "hidden";
+    
+    //Disable buttons while pomodoro is in progress
+    document.getElementById("startPomo").disabled = true;
+    document.getElementById("setBreak").disabled = true;
+    document.getElementById("setPomo").disabled = true;
 
     //Find the difference between the times - pomoTimeSeconds & pomoTimeMinutes
     var diffInMs = endTime - startTime,
@@ -138,9 +171,13 @@ function pomodoro(type) {
     function timeForABreak() {
         breakTime.play();
         alert("Pomodoro Timer: Great work! Time for a break.");
-        document.getElementById("status").innerHTML = "Great work! Time for a break.";
+        document.getElementById("status").innerHTML = "Time for a break.";
         minutesDisplay.innerHTML = "05";
         secondsDisplay.innerHTML = "00";
+        //Enable buttons when pomodoro is finished
+        document.getElementById("startPomo").disabled = false;
+        document.getElementById("setBreak").disabled = false;
+        document.getElementById("setPomo").disabled = false;
         document.getElementById("plus").style.visibility = "visible";
         document.getElementById("minus").style.visibility = "visible";
     }
@@ -151,6 +188,9 @@ function pomodoro(type) {
         document.getElementById("status").innerHTML = "Time to work!";
         document.getElementById("plus").style.visibility = "visible";
         document.getElementById("minus").style.visibility = "visible";
+        document.getElementById("startPomo").disabled = false;
+        document.getElementById("setBreak").disabled = false;
+        document.getElementById("setPomo").disabled = false;
     }
     
     pomoInterval = setInterval(pomoCountDown, 1000);

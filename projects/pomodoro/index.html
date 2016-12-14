@@ -15,21 +15,23 @@
         </div>
         
         <div id="timer" class="container">
-            <a id="plus" onclick="increment();" class="customise" alt="increase time by 1 minute"><i class="fa fa-arrow-up fa-3x" aria-hidden="true"></i></a><br>
+            <button id="plus" onclick="increment();" class="customise" alt="increase time by 1 minute"><i class="fa fa-arrow-up fa-3x" aria-hidden="true"></i></button><br>
             <span id="minutes" class="time">25</span>
             <span class="time">:</span>
             <span id="seconds" class="time">00</span><br>
-            <a id="minus" onclick="decrement();" class="customise" alt="decrease time by 1 minute"><i class="fa fa-arrow-down fa-3x" aria-hidden="true"></i></a><br>
+            <button id="minus" onclick="decrement();" class="customise" alt="decrease time by 1 minute"><i class="fa fa-arrow-down fa-3x" aria-hidden="true"></i></button><br>
             
-            
-            <i class="fa fa-play fa-3x buttons" aria-hidden="true" onclick="pomodoro('p');" aria-label="Start Pomodoro"></i>
-            <i class="fa fa-coffee fa-3x buttons" aria-hidden="true" onclick="pomodoro('b');" aria-label="Start Break" class="buttons"></i>
-            <i class="fa fa-pause fa-3x buttons" aria-hidden="true" onclick="pauseTimer();" aria-label="Pause Timer" class="buttons"></i>
-            <i class="fa fa-eject fa-3x buttons" aria-hidden="true" onclick="resetTimer();" aria-label="Reset Timer" class="buttons"></i>
+            <div id="control">
+                <button id="setPomo" class="buttons" onclick="setPomodoro();"><i class="fa fa-laptop fa-4x" aria-hidden="true"></i></button>
+                <button id="setBreak" class="buttons" onclick="setBreak();"><i class="fa fa-coffee fa-4x" aria-hidden="true" aria-label="Start Break"></i></button><br>
+                <button id="startPomo" class="buttons" onclick="pomodoro('p');"><i class="fa fa-play fa-4x" aria-hidden="true"  aria-label="Start Pomodoro"></i></button>
+                <button id="pause" class="buttons" onclick="pauseTimer();"><i class="fa fa-pause fa-4x" aria-hidden="true"  aria-label="Pause Timer"></i></button>
+                <button id="reset" class="buttons" onclick="resetTimer();"><i class="fa fa-eject fa-4x" aria-hidden="true"  aria-label="Reset Timer"></i></button>
+            </div>   
             
         </div>
         
-        <footer>&copy; <a href="http://alexhippo.github.io" target="_blank">Alexandra Hipolito</a> 2016. Soothing alert sounds from <a href="http://lifehacker.com/5931463/make-your-notifications-less-intrusive-with-these-soothing-alerts">Lifehacker</a></footer>
+        <footer>Made by <a href="http://alexhippo.github.io" target="_blank">Alexandra Hipolito</a>. Soothing alert sounds from <a href="http://lifehacker.com/5931463/make-your-notifications-less-intrusive-with-these-soothing-alerts" target="_blank">Lifehacker</a></footer>
     </body>
     <script src="../pomodoro/pomodoro.js"></script>
     
