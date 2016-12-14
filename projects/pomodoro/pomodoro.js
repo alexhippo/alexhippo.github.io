@@ -2,8 +2,8 @@
 /*jslint devel: true */
 
 //Pre-load audio
-var breakTime = new Audio('../pomodoro/timeforabreak.mp3'),
-    workTime = new Audio('../pomodoro/timeforpomodoro.mp3'),
+var breakTime = document.getElementById("breakSound"),
+    workTime = document.getElementById("pomoSound"),
     minutesDisplay = document.getElementById("minutes"),
     secondsDisplay = document.getElementById("seconds"),
     sessionType = 'p',
