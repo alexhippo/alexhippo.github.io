@@ -1,0 +1,24 @@
+/* Grid */
+.container {
+    border:5px solid black;
+    height:300px;
+    width:300px;
+    display:table;
+    
+}
+
+.row {
+    height:100px;
+    width:300px;
+    border: medium solid black;
+    display:table-row;
+}
+
+.square {
+    border: medium solid black;
+    width: 100px;
+    height: 100px;
+    position:relative;
+    align-content:center;
+    display:table-cell;
+}
