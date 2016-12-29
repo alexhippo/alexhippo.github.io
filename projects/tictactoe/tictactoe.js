@@ -45,6 +45,10 @@ function used(id) {
     } else return false;
 }
 
+function square(id) {
+    return document.getElementById(id).innerHTML;
+}
+
 function checkResult(symbol) {
     var square1 = document.getElementById(1).innerHTML;
     var square2 = document.getElementById(2).innerHTML;
@@ -131,7 +135,8 @@ function win() {
     document.getElementById("turn").innerHTML = "";
     
     //display message
-    document.getElementById("result").innerHTML = "You have won!";    
+    document.getElementById("result").innerHTML = "You have won!"; 
+    reset();
 }
 
 function loss() {
@@ -141,7 +146,8 @@ function loss() {
     document.getElementById("turn").innerHTML = "";
     
     //display message
-    document.getElementById("result").innerHTML = "You have lost.";    
+    document.getElementById("result").innerHTML = "You have lost."; 
+    reset();
 }
 
 function draw() {
@@ -151,5 +157,22 @@ function draw() {
     document.getElementById("turn").innerHTML = "";
     
     //display message
-    document.getElementById("result").innerHTML = "It's a draw!";    
+    document.getElementById("result").innerHTML = "It's a draw!"; 
+    reset();
+}
+
+function reset() {
+    setTimeout(function() {
+        squares = document.getElementsByClassName("square");
+        for (var i in squares) {
+            squares[i].innerHTML = "";
+        }
+        
+        //return to initial values
+        playersTurn = true;
+        computersTurn = false;
+        document.getElementById("turn").innerHTML = "It's your turn.";
+        document.getElementById("result").innerHTML = ""; 
+        ids = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    }, 2000);
 }
