@@ -1,12 +1,46 @@
-var playersTurn = true;
+var playersTurn = false;
 var computersTurn = false;
 var ids = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+var playerSymbol = "X";
+var computerSymbol = "O";
+var roundCounter = 1;
+
+
+function chooseSymbol(symbol) {
+    if (symbol === "X") {
+        playerSymbol = "X";
+        computerSymbol = "O";
+    } else {
+        playerSymbol = "O";
+        computerSymbol = "X";
+    }
+    document.getElementById("choose").innerHTML = "You are " + symbol;
+    
+    //alternate turns
+    if (roundCounter%2 == 0) {
+        playersTurn = false;
+        computersTurn = true;
+        setTimeout(function() {
+            computerClick();
+        }, 2000);
+        document.getElementById("turn").innerHTML = "It's computer's turn.";
+    } else {
+        playersTurn = true;
+        computersTurn = false;
+        document.getElementById("turn").innerHTML = "It's your turn.";
+    }
+}
+
+function resetChooseSymbol() {
+    document.getElementById("choose").innerHTML = "<p>Are you X or O?</p><button id='X' onclick='chooseSymbol(this.id);'>X</button> <button id='O' onclick='chooseSymbol(this.id);'>O</button>"
+}
+
 
 function playerClick(id) {
     if ((playersTurn === false) || (used(id) === true)) {
         return false;
     } else {
-        document.getElementById(id).innerHTML = "X";
+        document.getElementById(id).innerHTML = playerSymbol;
         playersTurn = false;
         computersTurn = true;
         document.getElementById("turn").innerHTML = "It's computer's turn."
@@ -14,7 +48,7 @@ function playerClick(id) {
         //remove from array so it doesn't get used again
         var index = ids.indexOf(Number(id));
         ids.splice(index, 1);
-        checkResult("X");
+        checkResult(playerSymbol);
         setTimeout(function() {
             computerClick();
         }, 2000);
@@ -26,7 +60,7 @@ function computerClick() {
         return false;
     } else {
         id = ids[Math.floor(Math.random() * ids.length)];
-        document.getElementById(id).innerHTML = "O";
+        document.getElementById(id).innerHTML = computerSymbol;
         computersTurn = false;
         playersTurn = true;
         document.getElementById("turn").innerHTML = "It's your turn.";
@@ -34,7 +68,7 @@ function computerClick() {
         //remove from array so it doesn't get used again
         var index = ids.indexOf(Number(id));
         ids.splice(index, 1);
-        checkResult("O");
+        checkResult(computerSymbol);
     }
     
 }
@@ -62,21 +96,21 @@ function checkResult(symbol) {
     
     //horizontal
     if (square1 === symbol && square2 === symbol && square3 === symbol) {
-        if (symbol === "X") {
+        if (symbol === playerSymbol) {
             win();  
         } else {
             loss();
         }
     } else
     if (square4 === symbol && square5 === symbol && square6 === symbol) {
-        if (symbol === "X") {
+        if (symbol === playerSymbol) {
             win();  
         } else {
             loss();
         }   
     } else
     if (square7 === symbol && square8 === symbol && square9 === symbol) {
-        if (symbol === "X") {
+        if (symbol === playerSymbol) {
             win();  
         } else {
             loss();
@@ -85,21 +119,21 @@ function checkResult(symbol) {
     
     //vertical
     if (square1 === symbol && square4 === symbol && square7 === symbol) {
-        if (symbol === "X") {
+        if (symbol === playerSymbol) {
             win();  
         } else {
             loss();
         }   
     } else
     if (square2 === symbol && square5 === symbol && square8 === symbol) {
-        if (symbol === "X") {
+        if (symbol === playerSymbol) {
             win();  
         } else {
             loss();
         }   
     } else
     if (square3 === symbol && square6 === symbol && square9 === symbol) {
-        if (symbol === "X") {
+        if (symbol === playerSymbol) {
             win();  
         } else {
             loss();
@@ -108,14 +142,14 @@ function checkResult(symbol) {
     
     //diagonal
     if (square1 === symbol && square5 === symbol && square9 === symbol) {
-        if (symbol === "X") {
+        if (symbol === playerSymbol) {
             win();  
         } else {
             loss();
         }  
     } else
     if (square3 === symbol && square5 === symbol && square7 === symbol) {
-        if (symbol === "X") {
+        if (symbol === playerSymbol) {
             win();  
         } else {
             loss();
@@ -137,6 +171,7 @@ function win() {
     //display message
     document.getElementById("result").innerHTML = "You have won!"; 
     reset();
+    roundCounter++;
 }
 
 function loss() {
@@ -148,6 +183,7 @@ function loss() {
     //display message
     document.getElementById("result").innerHTML = "You have lost."; 
     reset();
+    roundCounter++;
 }
 
 function draw() {
@@ -159,6 +195,7 @@ function draw() {
     //display message
     document.getElementById("result").innerHTML = "It's a draw!"; 
     reset();
+    roundCounter++;
 }
 
 function reset() {
@@ -169,10 +206,11 @@ function reset() {
         }
         
         //return to initial values
-        playersTurn = true;
+        playersTurn = false;
         computersTurn = false;
-        document.getElementById("turn").innerHTML = "It's your turn.";
+        document.getElementById("turn").innerHTML = "Choose your symbol first.";
         document.getElementById("result").innerHTML = ""; 
         ids = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        resetChooseSymbol();
     }, 2000);
 }
