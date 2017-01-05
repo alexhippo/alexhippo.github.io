@@ -1,23 +1,148 @@
-/* Grid */
-.container {
-    border:5px solid black;
-    height:300px;
+body {
+  padding-top:10px;
+}
+
+a {
+    color:black;
+    text-decoration:underline;
+}
+
+/* Header */
+h1 {
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Schoolbell', cursive;
+    margin-top:1px;
+    margin-bottom:1px;
+}
+
+h2 {
+    font-family: 'Schoolbell', cursive;
+    text-align:center;
+    font-size:24px;
+    margin-top:1px;
+    margin-bottom:1px;
+}
+
+h3 {
+    font-family:'Open Sans', sans-serif;
+    text-align:center;
+    margin-bottom:-10px;
+    margin-top:1px;
+}
+
+/* Content */
+#instructions {
+    font-family:'Open Sans', sans-serif;
+    margin: 10px auto;
+    text-align:center;
+}
+
+#howtoplay {
+    background-color:#fff;
+    font-family:'Open Sans', sans-serif;
+    text-align:center;
+    border: thin solid black;
+    border-radius:5px;
+    z-index:1;
+    position:fixed;
     width:300px;
+    top: 40%;
+    left: 50%;
+    margin: -100px 0 0 -150px;
+    padding:5px 2px 5px 2px;
+    visibility: hidden;
+}
+
+#overlay {
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    background-color: black;
+    opacity:0.8;
+    visibility: hidden;
+}
+
+#choose {
+    padding-bottom:5px;
+    margin: 10px auto;
+    text-align:center;
+    font-family:'Open Sans', sans-serif;
+    padding-bottom:5px;
+}
+
+#status {
+    padding-bottom:10px;
+    margin: 10px auto;
+    text-align:center;
+    font-family:'Open Sans', sans-serif;
+}
+
+
+/* Grid */
+.grid {
+    min-height:240px;
+    min-width:240px;
     display:table;
+    text-align:center;
+    /*border: medium solid black;*/
+    margin: 10px auto;
+    table-layout:fixed;
 }
 
 .row {
-    height:100px;
-    width:300px;
-    border: medium solid black;
+    height:80px;
+    width:240px;
     display:table-row;
+    table-layout:fixed;
 }
 
 .square {
-    border: medium solid black;
-    width: 100px;
-    height: 100px;
+    min-width: 80px;
+    min-height: 80px;
     position:relative;
-    align-content:center;
     display:table-cell;
+    font-family:'Schoolbell', cursive;
+    text-align:center;
+    font-size:50px;
+    table-layout:fixed;
+}
+
+.vborder{
+    border-left:medium solid #000;
+    border-right:medium solid #000;
+}
+
+.hborder{
+    border-top:medium solid #000;
+    border-bottom:medium solid #000;
+}
+
+#result {
+    text-align:center;
+    font-family: 'Schoolbell', cursive;
+    font-size:30px;
+    font-weight:bold;
+}
+
+#turn {
+    text-align:center;
+    margin: 10px auto;
+    font-family:'Open Sans', sans-serif;
+}
+
+/* Symbols */
+#X {
+    color: #B31931;
+    font-family: 'Schoolbell', cursive;
+    font-size:30px;
+    
+}
+
+#O {
+    color: #0058B9;
+    font-family: 'Schoolbell', cursive;
+    font-size:30px;
 }
