@@ -1,4 +1,4 @@
-/*Global*/
+/* Global */
 body {
     background-color: #fff;
     background-image: linear-gradient(#e7ffff .2em, transparent .1em);
@@ -140,13 +140,14 @@ h3 {
     text-align: center;
 }
 
-/*To-Do: Change cursor */
 .square .X {
     color: #B31931;
+    cursor: default;
 }
 
 .square .O {
     color: #0058B9;
+    cursor: default;
 }
 
 .vborder{
