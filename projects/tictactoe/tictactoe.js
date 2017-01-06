@@ -35,7 +35,7 @@ function whoseTurnIsIt(participant) {
     if (participant === "player") {
         playersTurn = true;
         computersTurn = false;
-        turnMsg.innerHTML = "It's your turn.";
+        turnMsg.innerHTML = "It's your turn. Choose a square.";
     } else if (participant === "computer") {
         playersTurn = false;
         computersTurn = true;
