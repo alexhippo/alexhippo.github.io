@@ -1,0 +1,47 @@
+/* Grid */
+.container {
+    margin: 10px auto;
+    display: table;
+    table-layout: fixed;
+    min-height: 240px;
+    min-width: 240px;
+    text-align: center;
+}
+
+.row {
+    display: table-row;
+    table-layout: fixed;
+    height: 80px;
+    width: 240px;
+}
+
+.square {
+    display: table-cell;
+    table-layout: fixed;
+    min-width: 80px;
+    min-height: 80px;
+    position: relative;
+    font-size: 50px;
+    text-align: center;
+}
+
+.light {
+    background-color: white;
+    opacity: 0.5;
+}
+
+#green {
+    background-color: #3DD04B;
+}
+
+#red {
+    background-color: #FF3A29;
+}
+
+#yellow {
+    background-color: #FFFF01;
+}
+
+#blue {
+    background-color: #4CC0FB;
+}
