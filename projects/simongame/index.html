@@ -5,13 +5,14 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Alexandra Hipolito | Simon Game</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" href="../simongame/simongame.css">
     </head>
     <body>
         <div class="container">
             <div class="row">
                 <div id="green" class="square"></div>
-                <div id="red" class="square light"></div>
+                <div id="red" class="square"></div>
             </div>
             <div class="row">
                 <div id="yellow" class="square"></div>
@@ -21,10 +22,10 @@
         
         <div id="count">Count: 0</div>
         <input type="checkbox">Strict mode
-        <button id="start">Start</button>
-        <button id="reset">Reset</button>
+        <button id="start" onclick="start();">Start</button>
+        <button id="reset" onclick="reset();">Reset</button>
         
-        
+        <script src="../simongame/simongame.js"></script>
         
     </body>
 </html>
