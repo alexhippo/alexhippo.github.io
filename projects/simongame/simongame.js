@@ -2,10 +2,12 @@ var colours = ["green", "red", "yellow", "blue"],
     series = [],
     playersTurn = false,
     checkpoint = 0,
+    timeToChoose = 0,
     greenSound = document.getElementById("greenSound"),
     redSound = document.getElementById("blueSound"),
     yellowSound = document.getElementById("yellowSound"),
-    blueSound = document.getElementById("blueSound");
+    blueSound = document.getElementById("blueSound"),
+    wrongSound = document.getElementById("wrongSound");
 
 function start() {
     if (playersTurn === true) {
@@ -29,6 +31,7 @@ function playerPressColour(id) {
         lightColour(id);
         check(id);
     }
+    
 }
 
 //check 
@@ -47,8 +50,8 @@ function check(id) {
         }
     } else {
         //wrong state - non-strict mode
-        playersTurn = false;
         checkpoint = 0;
+        wrongSound.play();
         setTimeout(presentSeries, 2000);
     }
 }
@@ -59,6 +62,9 @@ function chooseSeriesColour(){
     series.push(id);
 }
 
+function setPlayersTurn(){
+    playersTurn = true;
+}
 
 function presentSeries() {
     //light colours in series one at a time
@@ -69,12 +75,13 @@ function presentSeries() {
                 lightColour(series[i]);
                 if (Number(i) === (series.length-1)) {
                     setTimeout(function() {
-                        playersTurn = true;
-                    }, 2000);
+                        setPlayersTurn();    
+                    }, 2000);    
                 }
             }, 2000 * i);
         }(i));
     }
+    
 }
 
 
@@ -102,4 +109,4 @@ function lightColour(id) {
         }, 1000);
 }
 
-
+    
