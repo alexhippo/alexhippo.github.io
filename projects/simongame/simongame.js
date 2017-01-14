@@ -14,14 +14,17 @@ function start() {
         //disabling button if play is in progress
         return false;
     } else {
-        chooseSeriesColour(); //if wrong, DO NOT choose a colour
+        chooseSeriesColour(); 
         presentSeries(); 
+        document.getElementById("reset").style.visibility = "visible";
+        document.getElementById("start").style.visibility = "hidden";
     }
 }
 
 function reset() {
     series.length = 0;
-    start();
+    chooseSeriesColour();
+    setTimeout(presentSeries, 1000); 
 }
 
 function playerPressColour(id) {

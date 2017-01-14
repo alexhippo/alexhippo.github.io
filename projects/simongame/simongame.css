@@ -45,3 +45,7 @@
 #blue {
     background-color: #4CC0FB;
 }
+
+#reset {
+    visibility: hidden;
+}
