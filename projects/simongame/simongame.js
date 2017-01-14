@@ -1,7 +1,11 @@
 var colours = ["green", "red", "yellow", "blue"],
     series = [],
     playersTurn = false,
-    checkpoint = 0;
+    checkpoint = 0,
+    greenSound = document.getElementById("greenSound"),
+    redSound = document.getElementById("blueSound"),
+    yellowSound = document.getElementById("yellowSound"),
+    blueSound = document.getElementById("blueSound");
 
 function start() {
     if (playersTurn === true) {
@@ -77,6 +81,22 @@ function presentSeries() {
 function lightColour(id) {
     //apply light class
     document.getElementById(id).className += " light";
+    
+    switch(id) {
+        case "green":
+            greenSound.play();
+            break;
+        case "red":
+            redSound.play();
+            break;
+        case "yellow":
+            yellowSound.play();
+            break;
+        case "blue":
+            blueSound.play();
+            break;
+    }
+    
     setTimeout(function() {
       document.getElementById(id).className = "square";
         }, 1000);
