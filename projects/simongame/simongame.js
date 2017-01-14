@@ -34,7 +34,6 @@ function playerPressColour(id) {
     
 }
 
-//check 
 function check(id) {
     //check if the colour that the player pressed is the same as the one in series AND same position
     if (id === series[checkpoint]) {
@@ -60,6 +59,7 @@ function chooseSeriesColour(){
     //randomise
     id = colours[Math.floor(Math.random() * colours.length)];
     series.push(id);
+    document.getElementById("count").textContent = series.length;
 }
 
 function setPlayersTurn(){
