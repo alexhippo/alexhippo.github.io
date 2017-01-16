@@ -7,7 +7,8 @@ var colours = ["green", "red", "yellow", "blue"],
     redSound = document.getElementById("blueSound"),
     yellowSound = document.getElementById("yellowSound"),
     blueSound = document.getElementById("blueSound"),
-    wrongSound = document.getElementById("wrongSound");
+    wrongSound = document.getElementById("wrongSound"),
+    victorySound = document.getElementById("victorySound");
 
 function start() {
     if (playersTurn === true) {
@@ -16,8 +17,8 @@ function start() {
     } else {
         chooseSeriesColour(); 
         presentSeries(); 
-        document.getElementById("reset").style.visibility = "visible";
-        document.getElementById("start").style.visibility = "hidden";
+        document.getElementById("reset").style.visibility = 'visible';
+        document.getElementById("start").style.visibility = 'hidden';
     }
 }
 
@@ -47,9 +48,14 @@ function check(id) {
             checkpoint++;
         } else {
             //if end of the series, reset values
-            checkpoint = 0;
-            playersTurn = false;
-            setTimeout(start, 2000);
+            //if 20 steps - victory
+            if (series.length === 20) {
+                victory();
+            } else {
+                checkpoint = 0;
+                playersTurn = false;
+                setTimeout(start, 2000);
+            }
         }
     } else {
         if (document.getElementById("strict").checked) {
@@ -62,6 +68,20 @@ function check(id) {
             setTimeout(presentSeries, 2000);
         }
     }
+}
+
+function victory() {
+    victorySound.play();
+    playersTurn = false;
+    checkpoint = 0;
+    setTimeout(function (){
+        victorySound.pause();
+        victorySound.currentTime = 0;  
+        series.length = 0;
+        document.getElementById("count").textContent = 0;
+        document.getElementById("start").style.visibility = "visible";
+        document.getElementById("reset").style.visibility = "hidden";
+    }, 8000);
 }
 
 function chooseSeriesColour(){
@@ -77,6 +97,7 @@ function setPlayersTurn(){
 
 function presentSeries() {
     //light colours in series one at a time
+    console.log(series);
     playersTurn = false;
     for (var i in series) {
         (function(i){
