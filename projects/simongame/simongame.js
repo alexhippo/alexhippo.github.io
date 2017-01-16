@@ -24,6 +24,7 @@ function start() {
 function reset() {
     series.length = 0;
     chooseSeriesColour();
+    checkpoint = 0;
     setTimeout(presentSeries, 1000); 
 }
 
@@ -51,10 +52,15 @@ function check(id) {
             setTimeout(start, 2000);
         }
     } else {
-        //wrong state - non-strict mode
-        checkpoint = 0;
-        wrongSound.play();
-        setTimeout(presentSeries, 2000);
+        if (document.getElementById("strict").checked) {
+            checkpoint = 0;
+            wrongSound.play();
+            setTimeout(reset, 2000);
+        } else {
+            checkpoint = 0;
+            wrongSound.play();
+            setTimeout(presentSeries, 2000);
+        }
     }
 }
 
@@ -84,7 +90,6 @@ function presentSeries() {
             }, 2000 * i);
         }(i));
     }
-    
 }
 
 
