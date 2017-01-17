@@ -3,6 +3,7 @@ var colours = ["green", "red", "yellow", "blue"],
     playersTurn = false,
     checkpoint = 0,
     timeToChoose = 0,
+    n = 0,
     greenSound = document.getElementById("greenSound"),
     redSound = document.getElementById("blueSound"),
     yellowSound = document.getElementById("yellowSound"),
@@ -22,21 +23,39 @@ function start() {
     }
 }
 
+function timeLimit() {
+    timeToChoose = setInterval(function(){
+        n++;
+        if (n === 3) {
+            playersTurn = false;
+            check("wrong");
+            clearInterval(timeToChoose);
+            n = 0;
+        }
+    }, 1000)
+}
+
+
 function reset() {
     series.length = 0;
     chooseSeriesColour();
     checkpoint = 0;
-    setTimeout(presentSeries, 1000); 
+    setTimeout(presentSeries, 500); 
+    clearInterval(timeToChoose);
+    n = 0;
 }
 
 function playerPressColour(id) {
-    if (playersTurn === false) {
+    if ((playersTurn === false) || (n === 3)) {
         return false;
     } else {
+        clearInterval(timeToChoose);
+        n = 0;
         lightColour(id);
         check(id);
+        //if I press repeatedly
+        
     }
-    
 }
 
 function check(id) {
@@ -46,9 +65,9 @@ function check(id) {
         if (checkpoint < series.length-1) {
             //move checkpoint forward if we haven't reached the last colour in the series
             checkpoint++;
+            playersTurn = true;
+            setTimeout(timeLimit, 200);
         } else {
-            //if end of the series, reset values
-            //if 20 steps - victory
             if (series.length === 20) {
                 victory();
             } else {
@@ -59,13 +78,20 @@ function check(id) {
         }
     } else {
         if (document.getElementById("strict").checked) {
+            playersTurn = false;
             checkpoint = 0;
             wrongSound.play();
             setTimeout(reset, 2000);
+            clearInterval(timeToChoose);
+            n = 0;
+
         } else {
+            playersTurn = false;
             checkpoint = 0;
             wrongSound.play();
             setTimeout(presentSeries, 2000);
+            clearInterval(timeToChoose);
+            n = 0;
         }
     }
 }
@@ -97,7 +123,7 @@ function setPlayersTurn(){
 
 function presentSeries() {
     //light colours in series one at a time
-    console.log(series);
+    console.log(series); //remove this before final release
     playersTurn = false;
     for (var i in series) {
         (function(i){
@@ -105,12 +131,14 @@ function presentSeries() {
                 lightColour(series[i]);
                 if (Number(i) === (series.length-1)) {
                     setTimeout(function() {
-                        setPlayersTurn();    
-                    }, 2000);    
+                        setPlayersTurn(); 
+                        timeLimit();
+                    }, 1500);    
                 }
             }, 2000 * i);
         }(i));
     }
+    
 }
 
 
@@ -135,7 +163,5 @@ function lightColour(id) {
     
     setTimeout(function() {
       document.getElementById(id).className = "square";
-        }, 1000);
+        }, 500);
 }
-
-    
