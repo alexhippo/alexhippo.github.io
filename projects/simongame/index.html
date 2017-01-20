@@ -7,6 +7,8 @@
         <title>Alexandra Hipolito | Simon Game</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" href="../simongame/simongame.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Chango" rel="stylesheet">
     </head>
     <body>
         <audio id="greenSound" src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" preload="auto"></audio>
@@ -15,24 +17,63 @@
         <audio id="blueSound" src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3" preload="auto"></audio>
         <audio id="wrongSound" src="../simongame/BahBow.mp3" preload="auto"></audio>
         <audio id="victorySound" src="../simongame/victory.mp3" preload="auto"></audio>
+        <audio id="correctSound" src="../simongame/correct.mp3" preload="auto"></audio>
+        <div id="overlay"></div>
+        <div class="title">
+            Simon
+        </div>
         
-        <div class="container">
-            <div class="row">
-                <div id="green" class="square" onclick="playerPressColour(this.id)"></div>
-                <div id="red" class="square" onclick="playerPressColour(this.id)"></div>
-            </div>
-            <div class="row">
-                <div id="yellow" class="square" onclick="playerPressColour(this.id)"></div>
-                <div id="blue" class="square" onclick="playerPressColour(this.id)"></div>
+        <div class="header">
+            <div class="navbartable">
+                <div class="row">
+                    <div class="titlesquare">Round</div>
+                    <div class="titlesquare">Strict</div>
+                    <div class="titlesquare">Start</div>
+                    <div class="titlesquare">Reset</div>
+                    <div class="titlesquare">Help</div>
+                </div>
+                <div class="row">
+                    <div id="count" class="titlesquare">0</div>
+                    <div class="dark titlesquare"><input type="checkbox" id="strict"></div>
+                    <div class="dark titlesquare" id="start"><i class="fa fa-play" aria-hidden="true" onclick="start();"></i></div>
+                    <div class="dark titlesquare" id="reset"><i class="fa fa-refresh" aria-hidden="true" onclick="reset();"></i></div>
+                    <div class="dark titlesquare" id="help"><i class="fa fa-question" aria-hidden="true" onclick="showInstructions();"></i></div>
+                </div>
             </div>
         </div>
         
-        <div id="count">0</div>
-        <input type="checkbox" id="strict">Strict mode
-        <button id="start" onclick="start();">Start</button>
-        <button id="reset" onclick="reset();">Reset</button>
-        
+        <div class="grid">
+            <div id="green" class="dark square" onclick="playerPressColour(this.id)"></div>
+            <div id="red" class="dark square" onclick="playerPressColour(this.id)"></div>
+            <div id="yellow" class="dark square" onclick="playerPressColour(this.id)"></div>
+            <div id="blue" class="dark square" onclick="playerPressColour(this.id)"></div>
+        </div>
         <script src="../simongame/simongame.js"></script>
+        
+    
+    <div id="howtoplay">
+        <h2>How to play</h2>
+        <p>Remember and copy the sequence of colours and noises I make by pressing on the keys below! If you get it wrong, you will have to copy the sequence again.</p>
+
+        <p>Strict mode is harder - if you get it wrong, the sequence will reset and you will have to start all over from the beginning. Bummer!</p>
+
+        <p>Good luck :)</p>
+        
+        <h2>Credits</h2>
+        <p>Design Inspired by <a href="http://labs.uxmonk.com/simon-says/" target="_blank">UX Monk</a></p>
+        <p>Some sound effects from Family Feud, Pokemon and <a href="http://lifehacker.com/5931463/make-your-notifications-less-intrusive-with-these-soothing-alerts" target="_blank">Lifehacker</a></p>
+        <p>Built for <a href="http://freecodecamp.com" target="_blank">Free Code Camp Front End Web Development Course</a></p>
+        <p>Made by <a href="http://alexhippo.github.io" target="_blank">Alexandra Hipolito</a></p>
+        <a href="#" onclick="closeInstructions();">Ok, got it!</a>
+    </div>
+        
+<!--        <span id="heading">Simon</span>
+        
+        <span id="strictmode"><input type="checkbox" id="strict">Strict mode</span>
+        <button id="start" onclick="start();">Start</button>
+        <button id="reset" onclick="reset();">Reset</button>-->
+
+
         
     </body>
 </html>

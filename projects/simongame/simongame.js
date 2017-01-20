@@ -9,7 +9,19 @@ var colours = ["green", "red", "yellow", "blue"],
     yellowSound = document.getElementById("yellowSound"),
     blueSound = document.getElementById("blueSound"),
     wrongSound = document.getElementById("wrongSound"),
-    victorySound = document.getElementById("victorySound");
+    victorySound = document.getElementById("victorySound"),
+    correctSound = document.getElementById("correctSound");
+
+function showInstructions() {
+    document.getElementById("howtoplay").style.visibility = "visible";
+    document.getElementById("overlay").style.visibility = "visible";
+}
+
+function closeInstructions() {
+    document.getElementById("howtoplay").style.visibility = "hidden";
+    document.getElementById("overlay").style.visibility = "hidden";
+}
+
 
 function start() {
     if (playersTurn === true) {
@@ -18,9 +30,18 @@ function start() {
     } else {
         chooseSeriesColour(); 
         presentSeries(); 
-        document.getElementById("reset").style.visibility = 'visible';
-        document.getElementById("start").style.visibility = 'hidden';
     }
+    
+    buttonPress("start");
+    
+}
+
+function buttonPress(id) {
+    document.getElementById(id).className = "titlesquare";
+    
+    setTimeout(function() {
+      document.getElementById(id).className = "dark titlesquare";
+        }, 500);
 }
 
 function timeLimit() {
@@ -37,12 +58,18 @@ function timeLimit() {
 
 
 function reset() {
-    series.length = 0;
-    chooseSeriesColour();
-    checkpoint = 0;
-    setTimeout(presentSeries, 500); 
-    clearInterval(timeToChoose);
-    n = 0;
+    if (series.length == 0) {
+        return false;
+    } else {
+        series.length = 0;
+        chooseSeriesColour();
+        checkpoint = 0;
+        setTimeout(presentSeries, 500); 
+        clearInterval(timeToChoose);
+        n = 0;
+        buttonPress("reset");
+    }
+    
 }
 
 function playerPressColour(id) {
@@ -68,12 +95,15 @@ function check(id) {
             playersTurn = true;
             setTimeout(timeLimit, 200);
         } else {
-            if (series.length === 20) {
+            if (series.length === 20) { //TO-DO: Change to 20
                 victory();
             } else {
                 checkpoint = 0;
                 playersTurn = false;
                 setTimeout(start, 2000);
+                setTimeout(function() {
+                    correctSound.play();
+                }, 500);
             }
         }
     } else {
@@ -100,13 +130,12 @@ function victory() {
     victorySound.play();
     playersTurn = false;
     checkpoint = 0;
+    setTimeout(winningSeries, 500);
     setTimeout(function (){
         victorySound.pause();
         victorySound.currentTime = 0;  
         series.length = 0;
         document.getElementById("count").textContent = 0;
-        document.getElementById("start").style.visibility = "visible";
-        document.getElementById("reset").style.visibility = "hidden";
     }, 8000);
 }
 
@@ -117,12 +146,35 @@ function chooseSeriesColour(){
     document.getElementById("count").textContent = series.length;
 }
 
+function winningSeries() {
+    for (var i in series) {
+        (function(i){
+            setTimeout(function(){
+                document.getElementById(series[i]).className = "square";
+                setTimeout(function() {
+                document.getElementById(series[i]).className = "dark square";
+                }, 200);
+            }, 300 * i);
+        }(i));
+    }  
+}
+
 function setPlayersTurn(){
     playersTurn = true;
 }
 
 function presentSeries() {
     //light colours in series one at a time
+    var seriesTime = 2000;
+    
+    if (series.length >= 15) {
+        seriesTime = 600;
+    } else if (series.length >= 10) {
+        seriesTime = 700;
+    } else if (series.length >= 5) {
+        seriesTime = 1000;
+    } 
+    
     console.log(series); //remove this before final release
     playersTurn = false;
     for (var i in series) {
@@ -135,16 +187,15 @@ function presentSeries() {
                         timeLimit();
                     }, 1500);    
                 }
-            }, 2000 * i);
+            }, seriesTime * i);
         }(i));
     }
-    
 }
 
 
 function lightColour(id) {
     //apply light class
-    document.getElementById(id).className += " light";
+    document.getElementById(id).className = "square";
     
     switch(id) {
         case "green":
@@ -162,6 +213,6 @@ function lightColour(id) {
     }
     
     setTimeout(function() {
-      document.getElementById(id).className = "square";
+      document.getElementById(id).className = "dark square";
         }, 500);
 }
