@@ -10,7 +10,8 @@ var colours = ["green", "red", "yellow", "blue"],
     checkpoint = 0,
     timeToChoose = 0,
     n = 0,
-    gameInProgress = false;
+    gameInProgress = false,
+    strictMode = false,
     greenSound = document.getElementById("greenSound"),
     redSound = document.getElementById("blueSound"),
     yellowSound = document.getElementById("yellowSound"),
@@ -39,6 +40,15 @@ function start() {
         gameInProgress = true;
     }
     buttonPress("start");
+}
+
+function setStrictMode(status) {
+    strictMode = status;
+    if (status === true) {
+        document.getElementById("strict").innerHTML = '<i class="fa fa-toggle-on" aria-hidden="true" onclick="setStrictMode(false);"></i>'
+    } else {
+        document.getElementById("strict").innerHTML = '<i class="fa fa-toggle-off" aria-hidden="true" onclick="setStrictMode(true);"></i>'
+    }
 }
 
 function chooseAndPresentSeries() {
@@ -131,7 +141,7 @@ function check(id) {
                 }
             }
         } else {
-        if (document.getElementById("strict").checked) {
+        if (strictMode === true) {
             setTimeout(reset, 1500);
             clearInterval(timeToChoose);
             n = 0;

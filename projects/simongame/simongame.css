@@ -67,10 +67,12 @@ body {
 }
 
 #strict {
-    padding-top: 20px;
     width: 30px;
     height: 30px;
     color: white;
+    font-size: 40px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+    cursor: pointer;
 }
 
 button {
@@ -111,14 +113,16 @@ button {
 /* Grid */
 .grid {
     display: table;
-    table-layout:fixed;
-    min-height: 100vh;
-    min-width: 100vw; /*work out why there are spaces on the side */
+    table-layout: fixed;
+    height: 100vh;
+    width: 100vw;
     text-align: center;
     background-color: black;
 }
 
-
+.grid-row {
+    display: table-row;
+}
 
 .square {
     display: table-cell;
@@ -138,37 +142,43 @@ button {
 
 #green {
     background-color: #3DD04B;
+    cursor: pointer;
 }
 
 #red {
     background-color: #FF3A29;
+    cursor: pointer;
 }
 
 #yellow {
     background-color: #FFFF01;
+    cursor: pointer;
 }
 
 #blue {
     background-color: #4CC0FB;
+    cursor: pointer;
 }
 
 #reset {
     visibility: visible;
     font-size: 35px;
     text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
-    /*add shadows to icons */
+    cursor: pointer;
 }
 
 #start {
     visibility: visible;
     font-size: 35px;
     text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+    cursor: pointer;
 }
 
 #help {
     visibility: visible;
     font-size: 40px;
     text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+    cursor: pointer;
 }
 
 #correct {
