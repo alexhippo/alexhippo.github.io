@@ -205,6 +205,19 @@ button {
     visibility: hidden;
 }
 
+#win {
+    font-size: 200px;
+    z-index: 7;
+    color: greenyellow;
+    top: 50%;
+    left: 50%;
+    margin: -100px 0 0 -80px;
+    position: fixed;
+    opacity: 0;
+    visibility: hidden;
+    
+}
+
 
 @-webkit-keyframes bounceOutAndUp {
     0% {

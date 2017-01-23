@@ -129,7 +129,7 @@ function check(id) {
             } else {
                 if (series.length === 20) { //TO-DO: Change to 20
                     victory();
-                    bounceSign("correct");
+                    bounceSign("win");
                 } else {
                     checkpoint = 0;
                     playersTurn = false;
@@ -208,11 +208,11 @@ function presentSeries() {
     var seriesTime = 2000;
     
     if (series.length >= 15) {
-        seriesTime = 600;
-    } else if (series.length >= 10) {
         seriesTime = 700;
-    } else if (series.length >= 5) {
+    } else if (series.length >= 10) {
         seriesTime = 1000;
+    } else if (series.length >= 5) {
+        seriesTime = 1500;
     } 
     
     console.log(series); //TO-DO: remove this before final release
