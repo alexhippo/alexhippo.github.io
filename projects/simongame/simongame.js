@@ -1,9 +1,16 @@
+//disable double click to prevent multiple timers and series
+document.getElementsByTagName("div").ondblclick = function() { 
+    return false; 
+}
+
+
 var colours = ["green", "red", "yellow", "blue"],
     series = [],
     playersTurn = false,
     checkpoint = 0,
     timeToChoose = 0,
     n = 0,
+    gameInProgress = false;
     greenSound = document.getElementById("greenSound"),
     redSound = document.getElementById("blueSound"),
     yellowSound = document.getElementById("yellowSound"),
@@ -24,16 +31,19 @@ function closeInstructions() {
 
 
 function start() {
-    if (playersTurn === true) {
+    if ((playersTurn === true) || (gameInProgress === true)) {
         //disabling button if play is in progress
         return false;
     } else {
-        chooseSeriesColour(); 
-        presentSeries(); 
+        chooseAndPresentSeries();
+        gameInProgress = true;
     }
-    
     buttonPress("start");
-    
+}
+
+function chooseAndPresentSeries() {
+    chooseSeriesColour(); 
+    presentSeries(); 
 }
 
 function buttonPress(id) {
@@ -48,7 +58,6 @@ function timeLimit() {
     timeToChoose = setInterval(function(){
         n++;
         if (n === 3) {
-            playersTurn = false;
             check("wrong");
             clearInterval(timeToChoose);
             n = 0;
@@ -76,58 +85,65 @@ function playerPressColour(id) {
     if ((playersTurn === false) || (n === 3)) {
         return false;
     } else {
+        console.log("I pressed this colour");
         clearInterval(timeToChoose);
+        check(id);   
         n = 0;
         lightColour(id);
-        check(id);
-        //if I press repeatedly
-        
     }
 }
 
+//To-Do: Do not allow for 2nd check
+
 function check(id) {
-    //check if the colour that the player pressed is the same as the one in series AND same position
-    if (id === series[checkpoint]) {
+    if (playersTurn === false) {
+        return false;
+    } else {
+        if (id === series[checkpoint]) {
         //correct state
-        if (checkpoint < series.length-1) {
-            //move checkpoint forward if we haven't reached the last colour in the series
-            checkpoint++;
-            playersTurn = true;
-            setTimeout(timeLimit, 200);
-        } else {
-            if (series.length === 20) { //TO-DO: Change to 20
-                victory();
+            if (checkpoint < series.length-1) {
+                //move checkpoint forward if we haven't reached the last colour in the series
+                checkpoint++;
+                playersTurn = true;
+                setTimeout(timeLimit, 200);
             } else {
-                checkpoint = 0;
-                playersTurn = false;
-                setTimeout(start, 2000);
-                setTimeout(function() {
-                    correctSound.play();
-                }, 500);
+                if (series.length === 20) { //TO-DO: Change to 20
+                    victory();
+                } else {
+                    checkpoint = 0;
+                    playersTurn = false;
+                    setTimeout(chooseAndPresentSeries, 2000);
+                    setTimeout(function() {
+                        correctSound.play();
+                    }, 500);
+                }
+            }
+        } else {
+        if (document.getElementById("strict").checked) {
+            setTimeout(reset, 1500);
+            clearInterval(timeToChoose);
+            n = 0;
+            playersTurn = false;
+            checkpoint = 0;
+            wrongSound.play();
+        } else {
+            setTimeout(presentSeries, 1500);
+            clearInterval(timeToChoose);
+            n = 0;
+            playersTurn = false;
+            checkpoint = 0;
+            wrongSound.play();
             }
         }
-    } else {
-        if (document.getElementById("strict").checked) {
-            playersTurn = false;
-            checkpoint = 0;
-            wrongSound.play();
-            setTimeout(reset, 2000);
-            clearInterval(timeToChoose);
-            n = 0;
-
-        } else {
-            playersTurn = false;
-            checkpoint = 0;
-            wrongSound.play();
-            setTimeout(presentSeries, 2000);
-            clearInterval(timeToChoose);
-            n = 0;
-        }
-    }
+        
+        
+    } 
+        
 }
 
 function victory() {
     victorySound.play();
+    gameInProgress = false;
     playersTurn = false;
     checkpoint = 0;
     setTimeout(winningSeries, 500);
@@ -175,7 +191,7 @@ function presentSeries() {
         seriesTime = 1000;
     } 
     
-    console.log(series); //remove this before final release
+    console.log(series); //TO-DO: remove this before final release
     playersTurn = false;
     for (var i in series) {
         (function(i){
@@ -183,9 +199,9 @@ function presentSeries() {
                 lightColour(series[i]);
                 if (Number(i) === (series.length-1)) {
                     setTimeout(function() {
-                        setPlayersTurn(); 
+                        playersTurn = true;
                         timeLimit();
-                    }, 1500);    
+                    }, 1000);    
                 }
             }, seriesTime * i);
         }(i));
@@ -213,6 +229,10 @@ function lightColour(id) {
     }
     
     setTimeout(function() {
+       darkColour(id); 
+    }, 300);
+}
+
+function darkColour(id) {
       document.getElementById(id).className = "dark square";
-        }, 500);
 }
