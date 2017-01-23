@@ -170,3 +170,125 @@ button {
     font-size: 40px;
     text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
 }
+
+#correct {
+    font-size: 200px;
+    color: greenyellow;
+    z-index: 7;
+    top: 50%;
+    left: 50%;
+    margin: -100px 0 0 -100px;
+    position: fixed;
+    opacity:0;
+    visibility: hidden;
+}
+
+#wrong {
+    font-size: 200px;
+    color: red;
+    z-index: 7;
+    top: 50%;
+    left: 50%;
+    margin: -100px 0 0 -80px;
+    position: fixed;
+    opacity:0;
+    visibility: hidden;
+}
+
+
+@-webkit-keyframes bounceOutAndUp {
+    0% {
+        opacity: 0;
+        transform: translateY(2000px);
+    }
+    30% {
+        opacity: 1;
+        transform: translateY(-30px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-200px);
+    }
+ }
+
+@-moz-keyframes bounceOutAndUp {
+    0% {
+        opacity: 0;
+        transform: translateY(2000px);
+    }
+    30% {
+        opacity: 1;
+        transform: translateY(-30px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-200px);
+    }
+ }
+
+
+@-o-keyframes bounceOutAndUp {
+    0% {
+        opacity: 0;
+        transform: translateY(2000px);
+    }
+    30% {
+        opacity: 1;
+        transform: translateY(-30px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-200px);
+    }
+ }
+
+@-ms-keyframes bounceOutAndUp {
+    0% {
+        opacity: 0;
+        transform: translateY(2000px);
+    }
+    30% {
+        opacity: 1;
+        transform: translateY(-30px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-200px);
+    }
+ }
+
+
+@keyframes bounceOutAndUp {
+    0% {
+        opacity: 0;
+        transform: translateY(2000px);
+    }
+    30% {
+        opacity: 1;
+        transform: translateY(-30px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-200px);
+    }
+ }
+
+ .bounceOutAndUp {
+    /*-webkit-animation-name: bounceOutAndUp;
+    animation-name: bounceOutAndUp;*/
+    animation: bounceOutAndUp 1.5s;
+    -webkit-animation: bounceOutAndUp 1.5s;
+    -moz-animation: bounceOutAndUp 1.5s;
+    -o-animation: bounceOutAndUp 1.5s;
+    -ms-transition: bounceOutAndUp 1.5s;
+ }

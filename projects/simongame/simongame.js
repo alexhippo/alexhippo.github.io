@@ -93,6 +93,16 @@ function playerPressColour(id) {
     }
 }
 
+function bounceSign(scenario) {
+    document.getElementById(scenario).className = "bounceOutAndUp";
+    document.getElementById(scenario).style.visibility = "visible";
+    
+    setTimeout(function (){
+        document.getElementById(scenario).className = " "; 
+        document.getElementById(scenario).style.visibility = "hidden";
+    }, 1500);
+}
+
 //To-Do: Do not allow for 2nd check
 
 function check(id) {
@@ -109,10 +119,12 @@ function check(id) {
             } else {
                 if (series.length === 20) { //TO-DO: Change to 20
                     victory();
+                    bounceSign("correct");
                 } else {
                     checkpoint = 0;
                     playersTurn = false;
                     setTimeout(chooseAndPresentSeries, 2000);
+                    bounceSign("correct");
                     setTimeout(function() {
                         correctSound.play();
                     }, 500);
@@ -125,6 +137,7 @@ function check(id) {
             n = 0;
             playersTurn = false;
             checkpoint = 0;
+            bounceSign("wrong");
             wrongSound.play();
         } else {
             setTimeout(presentSeries, 1500);
@@ -132,6 +145,7 @@ function check(id) {
             n = 0;
             playersTurn = false;
             checkpoint = 0;
+            bounceSign("wrong");
             wrongSound.play();
             }
         }
