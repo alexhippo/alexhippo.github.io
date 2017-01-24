@@ -1,3 +1,4 @@
+/* Global */
 body {
     padding: 0;
     margin: 0;
@@ -16,21 +17,21 @@ body {
     padding-left:15px;
     padding-top: 3px;
     font-family: 'Chango', sans-serif;
-    font-size:20px;
+    font-size: 20px;
 }
 
-/* Header */
+/* Header/Navbar */
 .header {
     width: 100%;
     height: 70px;
     overflow: hidden;
     position: fixed;
-    top:30px;
+    top: 30px;
     z-index: 2;
     background-color: #000;
-    color:white;
-    padding-top:10px;
-    padding-left:10px;
+    color: white;
+    padding-top: 10px;
+    padding-left: 10px;
 }
 
 #heading {
@@ -41,43 +42,44 @@ body {
 }
 
 #count {
-    font-size:40px;
+    font-size: 40px;
     color: red;
 }
 
 .navbartable{
     display: table;
-    table-layout:fixed;
-    
+    table-layout: fixed;
 }
 
 .row {
     display: table-row;
 }
 
-.titlesquare {
+.navbarcell {
     display: table-cell;
     position: relative;
     text-align: center;
-    vertical-align:center;
-    padding-left:10px;
-    padding-right:10px;
+    vertical-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
     font-family: sans-serif;
-    font-size:15px;
+    font-size: 15px;
 }
 
 #strict {
-    width: 30px;
-    height: 30px;
     color: white;
-    font-size: 40px;
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+    font-size: 42px;
     cursor: pointer;
 }
 
-button {
-    width: 30px;
-    height: 30px;
+#reset, #start {
+    font-size: 35px;
+    cursor: pointer;
+}
+
+#help {
+    font-size: 42px;
+    cursor: pointer;
 }
 
 /* Instructions */
@@ -87,10 +89,10 @@ button {
     top: 0;
     left: 0;
     position: fixed;
-    background-color: black;
-    opacity: 0.8;
     visibility: hidden;
     z-index:3;
+    background-color: black;
+    opacity: 0.8;
 }
 
 #howtoplay {
@@ -105,7 +107,7 @@ button {
     background-size: 100% 1.5em;
     position: fixed;
     visibility: hidden;
-    font-family: 'Open Sans', sans-serif;
+    font-family: sans-serif;
     text-align: center;
 }
 
@@ -132,90 +134,53 @@ button {
 
 .dark {
     background-color: black;
-    opacity:0.5;
-}
-
-.light {
-    background-color: white;
-    opacity: 0.5;
+    opacity:0.3;
 }
 
 #green {
     background-color: #3DD04B;
-    cursor: pointer;
 }
 
 #red {
     background-color: #FF3A29;
-    cursor: pointer;
 }
 
 #yellow {
     background-color: #FFFF01;
-    cursor: pointer;
 }
 
 #blue {
     background-color: #4CC0FB;
+}
+
+#green, #red, #yellow, #blue {
     cursor: pointer;
 }
 
-#reset {
-    visibility: visible;
-    font-size: 35px;
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
-    cursor: pointer;
-}
 
-#start {
-    visibility: visible;
-    font-size: 35px;
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
-    cursor: pointer;
-}
-
-#help {
-    visibility: visible;
-    font-size: 40px;
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
-    cursor: pointer;
-}
-
-#correct {
+/* Correct/Wrong/Victory icons */
+#correct, #wrong, #win {
     font-size: 200px;
-    color: greenyellow;
     z-index: 7;
     top: 50%;
     left: 50%;
     margin: -100px 0 0 -100px;
     position: fixed;
-    opacity:0;
+    opacity: 0;
     visibility: hidden;
+}
+
+#correct {
+    color: greenyellow;
 }
 
 #wrong {
-    font-size: 200px;
     color: red;
-    z-index: 7;
-    top: 50%;
-    left: 50%;
     margin: -100px 0 0 -80px;
-    position: fixed;
-    opacity:0;
-    visibility: hidden;
 }
 
 #win {
-    font-size: 200px;
-    z-index: 7;
-    color: greenyellow;
-    top: 50%;
-    left: 50%;
-    margin: -100px 0 0 -80px;
-    position: fixed;
-    opacity: 0;
-    visibility: hidden;
-    
+    color: black;
 }
 
 
@@ -306,12 +271,10 @@ button {
     }
  }
 
- .bounceOutAndUp {
-    /*-webkit-animation-name: bounceOutAndUp;
-    animation-name: bounceOutAndUp;*/
+.bounceOutAndUp {
     animation: bounceOutAndUp 1.5s;
     -webkit-animation: bounceOutAndUp 1.5s;
     -moz-animation: bounceOutAndUp 1.5s;
     -o-animation: bounceOutAndUp 1.5s;
     -ms-transition: bounceOutAndUp 1.5s;
- }
+}
