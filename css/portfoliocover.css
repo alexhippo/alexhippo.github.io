@@ -170,9 +170,9 @@ body {
 }
 
 .profile {
-    width: 300px;
+    width: 250px;
     border: 1px;
-    border-radius: 50%;
+    border-radius: 100%;
 }
 
 .description {
