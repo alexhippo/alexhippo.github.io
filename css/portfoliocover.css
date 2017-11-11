@@ -172,7 +172,6 @@ body {
 .profile {
     width: 250px;
     border: 1px;
-    border-radius: 100%;
 }
 
 .description {
@@ -269,6 +268,16 @@ footer {
   .cover-container {
     width: 100%; /* Must be percentage or pixels for horizontal alignment */
   }
+    
+  .profile {
+    padding-top: 0;
+  }
+    
+  .description {
+    width: 50%;
+    text-align: justify;
+    font-size: 14px;
+    }
 }
 
 @media (min-width: 992px) {
@@ -277,6 +286,13 @@ footer {
   .cover-container {
     width: 100%;
   }
-
+    
+  .profile {
+    padding-top: 50px;
+  }
+    
+  .description {
+    width: 45%;
+  }
 
 }
