@@ -1,0 +1,13 @@
+{
+  "name": "alexhippo.github.io",
+  "version": "2.0.0",
+  "description": "Developer portfolio of Alex Hipolito",
+  "main": "index.js",
+  "repository": "https://github.com/alexhippo/alexhippo.github.io.git",
+  "author": "Alex Hipolito",
+  "license": "MIT",
+  "scripts": {
+    "start": "gatsby develop"
+  },
+  "devDependencies": {}
+}
