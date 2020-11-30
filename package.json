@@ -7,7 +7,8 @@
   "author": "Alex Hipolito",
   "license": "MIT",
   "scripts": {
-    "start": "gatsby develop"
+    "start": "gatsby develop",
+    "test": "jest"
   },
   "devDependencies": {}
 }

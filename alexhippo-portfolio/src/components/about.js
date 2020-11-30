@@ -1,5 +1,7 @@
 import React from "react"
 import styled from "styled-components"
+import PropTypes from 'prop-types'
+
 
 const StyledSection = styled.section`
     .title {
@@ -24,6 +26,10 @@ const About = ({ content }) => {
             </div>
         </StyledSection>
     )
+}
+
+About.propTypes = {
+    content: PropTypes.any
 }
 
 export default About

@@ -4,6 +4,7 @@ import styled from "styled-components"
 import GlobalStyle from "./globalStyle"
 import Header from "./header"
 import Footer from "./footer"
+import PropTypes from "prop-types"
 
 const StyledLayout = styled.div`
     width: 100%;
@@ -29,6 +30,10 @@ const Layout = ({children}) => {
             <Footer />
         </StyledLayout>
     )
+}
+
+Layout.propTypes = {
+    children: PropTypes.any
 }
 
 export default Layout

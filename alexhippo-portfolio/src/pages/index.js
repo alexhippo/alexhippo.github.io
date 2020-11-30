@@ -1,4 +1,6 @@
 import React from "react"
+import PropTypes from "prop-types"
+import { graphql } from 'gatsby'
 
 import Layout from "../components/layout"
 import Hero from "../components/hero"
@@ -11,6 +13,10 @@ const IndexPage = ({data}) => {
       <About content={data.about.edges[1].node} />
     </Layout>
   )
+}
+
+IndexPage.propTypes = {
+  data: PropTypes.any
 }
 
 export default IndexPage

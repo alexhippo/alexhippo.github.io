@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import PropTypes from 'prop-types'
 
 const StyledSection = styled.section`
     .title {
@@ -35,6 +36,10 @@ const Hero = ({ content }) => {
             </div>
         </StyledSection>
     )
+}
+
+Hero.propTypes = {
+    content: PropTypes.any 
 }
 
 export default Hero

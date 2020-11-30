@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders correctly 1`] = `
+<header
+  className="sc-bdfBwQ jhDNFN"
+>
+  <a
+    aria-label="Homepage"
+    href="/"
+  >
+    <div
+      className="sc-gsTCUz fNyLPz"
+    >
+      Alex Hipolito
+    </div>
+  </a>
+</header>
+`;
