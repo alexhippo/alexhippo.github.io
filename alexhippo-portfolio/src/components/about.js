@@ -12,14 +12,15 @@ const StyledSection = styled.section`
 `
 
 const About = ({ content }) => {
-    const { frontmatter } = content
+    const { frontmatter, rawMarkdownBody } = content
+    const formattedDescription = rawMarkdownBody.split(`\n\n`).map(paragraph => `<p>${paragraph.replace(/\n/g, `<br>`)}</p>`).join(``) 
     return (
         <StyledSection id="about">
             <h2 className="subtitle">
                 {frontmatter.about}
             </h2>
             <div className="description">
-                <p>{frontmatter.description}</p>
+                <p dangerouslySetInnerHTML={{ __html: formattedDescription }} />
             </div>
         </StyledSection>
     )

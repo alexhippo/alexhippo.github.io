@@ -37,8 +37,8 @@ export const pageQuery = graphql`
         node {
           frontmatter {
             about
-            description
           }
+          rawMarkdownBody
         }
       }
     }
