@@ -1,11 +1,18 @@
 module.exports = {
   siteMetadata: {
-    title: `Alex Hipolito | Web Development, Test Automation, Agile Delivery`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Alex Hipolito | Based in Sydney, Australia | Web Development, Test Automation, Agile Delivery`,
+    description: `Portfolio of Alex`,
+    author: `@alexhippo`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -16,6 +23,7 @@ module.exports = {
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-image`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -27,6 +35,16 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `asap`,
+          `miriam libre:700`
+        ],
+        display: 'swap'
+      }
     },
     `gatsby-plugin-styled-components`,
   ],

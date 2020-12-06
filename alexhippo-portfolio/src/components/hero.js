@@ -20,16 +20,12 @@ const Hero = ({ content }) => {
         <StyledSection id="hero">
             <h1 className="title">
                 {frontmatter.greetings}{" "} 
-                <span role="img" aria-label="hello emoji">
-                {frontmatter.emoji}
-                </span>
                 <br />
                 {frontmatter.title}
             </h1>
             <h2 className="subtitle">
                 {frontmatter.subtitlePrefix}{" "}
                 <span className="highlighted">{frontmatter.subtitleHighlight}</span>&nbsp;
-                {frontmatter.subtitleSuffix}{" "}
             </h2>
             <div className="description">
                 {rawMarkdownBody}

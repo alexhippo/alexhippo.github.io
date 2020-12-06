@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import PropTypes from 'prop-types'
 
-
 const StyledSection = styled.section`
     .title {
         margin-bottom: 0;
@@ -11,9 +10,14 @@ const StyledSection = styled.section`
     .subtitle {
         margin-top: 0;
     }
+
+    a{
+        text-decoration: underline;
+    }
 `
 
 const About = ({ content }) => {
+    console.log(content);
     const { frontmatter, rawMarkdownBody } = content
     const formattedDescription = rawMarkdownBody.split(`\n\n`).map(paragraph => `<p>${paragraph.replace(/\n/g, `<br>`)}</p>`).join(``) 
     return (
@@ -29,7 +33,7 @@ const About = ({ content }) => {
 }
 
 About.propTypes = {
-    content: PropTypes.any
+    content: PropTypes.object
 }
 
 export default About
