@@ -1,51 +1,35 @@
 import React from "react"
-import { Link } from "gatsby"
 import styled from "styled-components"
 
-const StyledHeader = styled.header`
-  width: 100%;
-  max-width: 62.5rem;
-  height: 6.25rem;
-  margin: 0 auto;
-  padding: 0 2.5rem;
-  background: white;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-`
+import Navbar from 'react-bootstrap/Navbar'
+import Nav from 'react-bootstrap/Nav'
+
 
 const StyledLogo = styled.div`
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 900;
   color: black;
   font-family: 'Miriam Libre', sans-serif;
-`
-
-const StyledSpan = styled.span`
-  padding-right: 10px;
-  padding-left: 10px;
-  white-space: pre;
+  padding-right: 20px;
+  &hover: {color: black;}
 `
 
 const Header = () => {
   return (
-    <StyledHeader>
-      <Link to="/" aria-label="Homepage">
-        <StyledLogo>alexhipolito</StyledLogo>
-      </Link>
-      <Link to="/" aria-label="About me">
-        <StyledSpan>about</StyledSpan>
-      </Link>
-      <Link to="/" aria-label="CV">
-        <StyledSpan>cv</StyledSpan>
-      </Link>
-      <Link to="/" aria-label="Portfolio">
-        <StyledSpan>portfolio</StyledSpan>
-      </Link>
-      <Link to="/" aria-label="Contact">
-        <StyledSpan>contact</StyledSpan>
-      </Link>
-    </StyledHeader>
+    <Navbar expand="lg" className="navbar" sticky="top" role="navigation" id="header">
+      <StyledLogo>
+        <Nav.Link href="/">alexhipolito</Nav.Link>
+      </StyledLogo>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto">
+          <Nav.Link href="#about">about</Nav.Link>
+          <Nav.Link href="#cv">CV</Nav.Link>
+          <Nav.Link href="#portfolio">portfolio</Nav.Link>
+          <Nav.Link href="#contact">contact</Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+  </Navbar>
   )
 }
 
