@@ -1,6 +1,6 @@
 ---
 greetings: "Hello, kumusta ka?"
-title: "I'm Alex."
-subtitlePrefix: "I"
-subtitleHighlight: "code, test and deliver."
+title: "I'm Alex Hipolito."
+subtitlePrefix: "I "
+subtitleHighlight: "build, test and deliver."
 ---

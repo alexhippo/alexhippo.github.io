@@ -1,18 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
-import styled from "styled-components"
 
 import Layout from "../components/layout"
 import Hero from "../components/hero"
 import About from "../components/about"
 
-const StyledImage = styled(Img)`
-  profileImage{
-    borderRadius: 100px,
-  }
-`
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const IndexPage = ({data}) => {
@@ -20,14 +14,6 @@ const IndexPage = ({data}) => {
     <Layout>
       <Hero content={data.hero.edges[0].node} />
       <About content={data.about.edges[0].node} />
-      <StyledImage 
-        fixed={data.file.childImageSharp.fixed} 
-        alt="Profile image of Alex Hipolito" 
-        aria-label="Profile image of Alex Hipolito" 
-        style={{
-          // Defaults are overwrite-able by setting one or each of the following:
-          borderRadius: '200px',
-        }} />
     </Layout>
   )
 }
@@ -40,7 +26,7 @@ export default IndexPage
 
 export const query = graphql`
 {
-  hero: allMarkdownRemark(filter: {frontmatter: {title: {eq: "I'm Alex."}}}) {
+  hero: allMarkdownRemark(filter: {frontmatter: {title: {eq: "I'm Alex Hipolito."}}}) {
     edges {
       node {
         frontmatter {
@@ -59,17 +45,6 @@ export const query = graphql`
           about
         }
         rawMarkdownBody
-      }
-    }
-  }
-  file(relativePath: {eq: "profileimage.jpg"}) {
-    childImageSharp {
-      fixed(
-        width: 300, 
-        height: 300, 
-        quality: 89,  
-      ) {
-        ...GatsbyImageSharpFixed_tracedSVG
       }
     }
   }

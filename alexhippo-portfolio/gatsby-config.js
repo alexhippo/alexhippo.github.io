@@ -41,11 +41,12 @@ module.exports = {
       options: {
         fonts: [
           `asap`,
-          `miriam libre:700`
+          `miriam libre`
         ],
         display: 'swap'
       }
     },
     `gatsby-plugin-styled-components`,
+    'gatsby-plugin-testing'
   ],
 }

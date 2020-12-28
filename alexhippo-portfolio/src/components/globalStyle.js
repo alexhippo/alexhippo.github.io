@@ -7,6 +7,8 @@ const GlobalStyle = createGlobalStyle`
     html {
         width: 100%;
         height: 100%;
+        margin: 0;
+        padding: 0;
     }
     body {
         width: 100%;
@@ -21,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
         font-weight: 400;
     }
     h1 {
-        font-weight: 700;
+        font-weight: 300;
         font-size: 2rem;
         line-height: 2.375rem;
         color: black;
@@ -31,7 +33,7 @@ const GlobalStyle = createGlobalStyle`
         }
     }
     h2 {
-        font-weight: 700;
+        font-weight: 300;
         font-size: 1.25rem;
         line-height: 1.5rem;
         color: black;
@@ -48,9 +50,26 @@ const GlobalStyle = createGlobalStyle`
         cursor: pointer;
         &:hover,
         &:focus {
-          outline: 0;
+          outline: 0px;
+          color: black;
+        };
+        &:focus-visible {
+          outline: 3px solid black;
         }
     }
+    #hero {
+        padding-top: 200px;
+        padding-bottom: 200px;
+        background-color: #57233a;
+        text-align: center;
+        border-color: 5px solid black;
+        position: relative;
+    }
+
+    #header {
+        background-color: #b98d72;
+    }
+
 `
 
 export default GlobalStyle

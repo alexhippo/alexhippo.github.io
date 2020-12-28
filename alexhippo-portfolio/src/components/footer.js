@@ -19,7 +19,10 @@ const StyledFooter = styled.footer`
 
 const Footer = () => (
   <StyledFooter>
-       <span role="img" aria-label="copyright">©️</span>&nbsp;Alex Hipolito 2020. Made with <span role="img" aria-label="love emoji">💖</span> and <span role="img" aria-label="coffee emoji">☕</span>
+       <span role="img" aria-label="copyright">©️</span>
+       &nbsp;
+       Alex Hipolito 2020. 
+       Made with&nbsp;<span role="img" aria-label="love" alt="love emoji">💖</span>&nbsp;and&nbsp;<span role="img" aria-label="coffee" alt="coffee emoji">☕</span>
   </StyledFooter>
 )
 
