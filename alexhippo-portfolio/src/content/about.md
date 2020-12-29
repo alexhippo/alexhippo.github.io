@@ -1,7 +1,7 @@
 ---
 about: "a little bit about me"
 ---
-I'm an Australian Filipino Web Developer and QA Engineer based in Sydney with over 7 years of experience in coding, testing and delivering core features to apps millions of Australians use everyday.
+I'm an Aussie Filipino Web Developer and QA Engineer based in Sydney with over 7 years of experience in coding, testing and delivering core features to apps millions of Australians use everyday.
 
 My extensive background in Digital, Media and Video Streaming services enables me to understand the problem as well as collaborate with teams to find and implement a high quality solution. I build and maintain end-to-end web and integration test automation suites from scratch, empowering teams to deliver features faster and with confidence. I am also an advocate for Web Accessibility, testing and contributing to code to comply with WCAG AA standards to help ensure that the web is accessible to all. Whenever I have a spare moment, I also code and ship bugfixes.
 

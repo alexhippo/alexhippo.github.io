@@ -46,7 +46,7 @@ export const About = ({ content }) => {
     `)
 
     return (
-        <StyledSection id="about">
+        <StyledSection id="about" className="rowComponent">
             <h2 className="subtitle">
                 {frontmatter.about}
             </h2>

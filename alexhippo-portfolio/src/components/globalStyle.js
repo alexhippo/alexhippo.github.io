@@ -64,10 +64,25 @@ const GlobalStyle = createGlobalStyle`
         text-align: center;
         border-color: 5px solid black;
         position: relative;
+        font-family: 'Miriam Libre', sans-serif;
     }
-
     #header {
         background-color: #b98d72;
+    }
+    #portfolio{
+        background-color: #161B1F;
+        color: #fff;
+    }
+    #resume{
+        background-color: #fff;
+        color: #000;
+    }
+    #contact{
+        background-color: #D3D3D3;
+    }
+    .rowComponent{
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
 
 `

@@ -9,13 +9,11 @@ const StyledSection = styled.section`
     .title {
         margin-bottom: 0;
         color: white;
+        font-weight: 700;
     }
     .subtitle {
         margin-top: 0;
         color: white;
-    }
-    .highlighted {
-        
     }
 `
 

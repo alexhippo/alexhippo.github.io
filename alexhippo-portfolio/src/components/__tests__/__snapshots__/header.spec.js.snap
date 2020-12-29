@@ -49,21 +49,21 @@ exports[`Header renders correctly 1`] = `
       </a>
       <a
         className="nav-link"
-        data-rb-event-key="#cv"
-        href="#cv"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-      >
-        CV
-      </a>
-      <a
-        className="nav-link"
         data-rb-event-key="#portfolio"
         href="#portfolio"
         onClick={[Function]}
         onKeyDown={[Function]}
       >
         portfolio
+      </a>
+      <a
+        className="nav-link"
+        data-rb-event-key="#resume"
+        href="#resume"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+      >
+        résumé
       </a>
       <a
         className="nav-link"

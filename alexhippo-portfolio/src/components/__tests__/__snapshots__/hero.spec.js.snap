@@ -9,7 +9,7 @@ exports[`Hero renders correctly 1`] = `
     className="container"
   >
     <section
-      className="sc-bdfBwQ dTuiPp"
+      className="sc-bdfBwQ cyhnvE"
     >
       <h1
         className="title"
