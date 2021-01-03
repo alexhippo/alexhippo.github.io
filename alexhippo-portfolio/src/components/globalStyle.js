@@ -69,20 +69,24 @@ const GlobalStyle = createGlobalStyle`
     #header {
         background-color: #b98d72;
     }
-    #portfolio{
+    #portfolio {
         background-color: #161B1F;
         color: #fff;
+        padding: 5rem;
     }
-    #resume{
+    #resume {
         background-color: #fff;
         color: #000;
     }
-    #contact{
+    #contact {
         background-color: #D3D3D3;
     }
-    .rowComponent{
+    .rowComponent {
         padding-top: 50px;
         padding-bottom: 50px;
+    }
+    .portfolioCard {
+        color: #000;
     }
 
 `
