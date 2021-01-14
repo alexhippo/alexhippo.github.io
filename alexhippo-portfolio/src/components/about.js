@@ -33,12 +33,9 @@ export const About = ({ content }) => {
         query {
             file(relativePath: {eq: "profileimage.jpg"}) {
                 childImageSharp {
-                  fixed(
-                    width: 300, 
-                    height: 300, 
-                    quality: 89,  
-                  ) {
-                    ...GatsbyImageSharpFixed_tracedSVG
+                  fluid(maxWidth: 250, quality: 89) {
+                    ...GatsbyImageSharpFluid_tracedSVG
+                    ...GatsbyImageSharpFluidLimitPresentationSize
                   }
                 }
               }
@@ -52,13 +49,12 @@ export const About = ({ content }) => {
             </h2>
             <div className="description">
                 <Img 
-                    fixed={data.file.childImageSharp.fixed} 
+                    fluid={data.file.childImageSharp.fluid} 
                     alt="Profile image of Alex Hipolito" 
                     aria-label="Profile image of Alex Hipolito" 
                     style={{
-                    borderRadius: '200px',
-                    float: 'left',
-                    margin: '20px'
+                        borderRadius: '200px',
+                        margin: '0 auto 10px'
                 }} />
                 <p dangerouslySetInnerHTML={{ __html: formattedDescription }} />            
             </div>

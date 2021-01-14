@@ -2,7 +2,7 @@
 id: "pomodoro"
 title: "Pomodoro Timer"
 tech: "Javascript, Bootstrap, HTML, CSS"
-thumbnail: "../images/pomodoro.jpg"
+thumbnail: './pomodoro.jpg'
 link: "https://alexhippo.github.io/projects/pomodoro/"
 github: "https://github.com/alexhippo/alexhippo.github.io"
 ---

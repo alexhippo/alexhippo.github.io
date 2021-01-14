@@ -2,7 +2,7 @@
 id: "jscalc"
 title: "Javascript Calculator"
 tech: "Javascript, Bootstrap, HTML, CSS"
-thumbnail: "calc.png"
+thumbnail: './jscalc.png'
 link: "https://alexhippo.github.io/projects/jscalculator/"
 github: "https://github.com/alexhippo/alexhippo.github.io"
 ---

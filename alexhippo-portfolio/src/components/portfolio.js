@@ -38,15 +38,22 @@ export const Portfolio = ({ content }) => {
             allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(portfolioSamples)/"}}) {
                 edges {
                     node {
-                        frontmatter {
-                            title
-                            tech
-                            link
-                            github
+                    frontmatter {
+                        title
+                        tech
+                        thumbnail {
+                            childImageSharp {
+                                fluid {
+                                ...GatsbyImageSharpFluid_tracedSVG
+                                }
+                            }
                         }
-                            rawMarkdownBody
-                        }
+                        link
+                        github
                     }
+                    rawMarkdownBody
+                    }
+                }
             }
         }
     `)

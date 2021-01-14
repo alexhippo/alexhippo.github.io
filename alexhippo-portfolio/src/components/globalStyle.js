@@ -20,10 +20,10 @@ const GlobalStyle = createGlobalStyle`
         font-size: 1.125rem;
         font-family: "Asap", Arial, Helvetica, sans-serif;
         line-height: 1.5rem;
-        font-weight: 400;
+        font-weight: 300;
     }
     h1 {
-        font-weight: 300;
+        font-weight: 700;
         font-size: 2rem;
         line-height: 2.375rem;
         color: black;
@@ -33,14 +33,46 @@ const GlobalStyle = createGlobalStyle`
         }
     }
     h2 {
-        font-weight: 300;
-        font-size: 1.25rem;
+        font-weight: 600;
+        font-size: 2rem;
         line-height: 1.5rem;
         color: black;
+        font-family: 'Miriam Libre', sans-serif;
         @media (min-width: 1200px) {
             font-size: 2rem;
             line-height: 3rem;
         }
+    }
+    h3 {
+        font-weight: 500;
+        font-size: 1.50rem;
+        line-height: 1.5rem;
+        color: black;
+        font-family: "Asap", Arial, Helvetica, sans-serif;
+        @media (min-width: 1200px) {
+            font-size: 1.85rem;
+            line-height: 3rem;
+        }
+    }
+    h4 {
+        font-weight: 300;
+        font-size: 1.30rem;
+        line-height: 1.5rem;
+        color: black;
+        font-family: "Asap", Arial, Helvetica, sans-serif;
+        @media (min-width: 1200px) {
+            font-size: 1.50rem;
+            line-height: 1rem;
+        }
+    }
+    h4.companyTitle {
+        display: inline-block;
+        margin-top: 0;
+    }
+    span.personalTitle {
+        margin-left: 10px;
+        color: #7A7A7A;
+        font-weight: 700;
     }
     a {
         display: inline-block;
@@ -78,6 +110,13 @@ const GlobalStyle = createGlobalStyle`
         background-color: #fff;
         color: #000;
     }
+    .description {
+        width: 100%;
+        float: none;
+        max-width: 62.5rem;
+        margin: 0 auto;
+        padding: 0 2.5rem;
+    }
     #contact {
         background-color: #D3D3D3;
     }
@@ -88,7 +127,13 @@ const GlobalStyle = createGlobalStyle`
     .portfolioCard {
         color: #000;
     }
-
+    .downloadResume {
+        text-align: center;
+    }
+    a.downloadResume{
+        text-decoration: none;
+        color: #fff;
+    }
 `
 
 export default GlobalStyle
