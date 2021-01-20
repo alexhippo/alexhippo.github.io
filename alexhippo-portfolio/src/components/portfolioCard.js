@@ -5,8 +5,8 @@ import Card from 'react-bootstrap/Card'
 import Img from 'gatsby-image'
 
 export const PortfolioCard = ({ content }) => {
-    const { frontmatter, rawMarkdownBody } = content
-    const formattedDescription = rawMarkdownBody.split(`\n\n`).map(paragraph => `<p>${paragraph.replace(/\n/g, `<br>`)}</p>`).join(``); 
+    const { frontmatter, html } = content
+    //const formattedDescription = rawMarkdownBody.split(`\n\n`).map(paragraph => `<p>${paragraph.replace(/\n/g, `<br>`)}</p>`).join(``); 
 
     return (
         <Card className="portfolioCard">
@@ -25,9 +25,7 @@ export const PortfolioCard = ({ content }) => {
                         marginBottom: '10px'
                     }}
                 />
-                <Card.Text>
-                    <p dangerouslySetInnerHTML={{ __html: formattedDescription }} />            
-                </Card.Text>
+                <p dangerouslySetInnerHTML={{ __html: html }} />            
                 <Card.Link href={frontmatter.link}>Demo</Card.Link>
                 <Card.Link href={frontmatter.github}>Github</Card.Link>
             </Card.Body>

@@ -119,6 +119,7 @@ const GlobalStyle = createGlobalStyle`
     }
     #contact {
         background-color: #D3D3D3;
+        text-align: center;
     }
     .rowComponent {
         padding-top: 50px;

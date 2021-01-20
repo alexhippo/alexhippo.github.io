@@ -24,8 +24,7 @@ const StyledSection = styled.section`
 `
 
 export const Contact = ({ content }) => {
-    const { frontmatter, rawMarkdownBody } = content
-    const formattedDescription = rawMarkdownBody.split(`\n\n`).map(paragraph => `<p>${paragraph.replace(/\n/g, `<br>`)}</p>`).join(``); 
+    const { html, frontmatter } = content
 
     return (
         <StyledSection id="contact" className="rowComponent">
@@ -33,7 +32,7 @@ export const Contact = ({ content }) => {
                 {frontmatter.title}
             </h2>
             <div className="description">
-                <p dangerouslySetInnerHTML={{ __html: formattedDescription }} />            
+                <p dangerouslySetInnerHTML={{ __html: html }} />
             </div>
         </StyledSection>
     ) 

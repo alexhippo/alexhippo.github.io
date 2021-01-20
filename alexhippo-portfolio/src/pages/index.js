@@ -77,6 +77,7 @@ export const query = graphql`
   contact: allMarkdownRemark(filter: {frontmatter: {title: {eq: "contact"}}}) {
     edges {
       node {
+        html
         frontmatter {
           title
         }

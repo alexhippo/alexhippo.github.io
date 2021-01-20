@@ -38,7 +38,9 @@ export const Portfolio = ({ content }) => {
             allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(portfolioSamples)/"}}) {
                 edges {
                     node {
-                    frontmatter {
+                        id
+                        html
+                        frontmatter {
                         title
                         tech
                         thumbnail {

@@ -39,6 +39,7 @@ export const Resume = ({ content }) => {
             experience: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(resume/experience)/"}}, sort: {fields: [frontmatter___startDate], order: DESC}) {
                 edges {
                     node {
+                        id
                         html
                         frontmatter {
                             company
@@ -55,6 +56,7 @@ export const Resume = ({ content }) => {
             education: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(resume/education)/"}}, sort: {fields: [frontmatter___startYear], order: DESC}) {
                 edges {
                     node {
+                        id
                         html
                         frontmatter {
                             school
@@ -69,6 +71,7 @@ export const Resume = ({ content }) => {
             community: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(resume/community)/"}}, sort: {fields: [frontmatter___startDate], order: DESC}) {
                 edges {
                     node {
+                        id
                         html
                         frontmatter {
                             org

@@ -7,4 +7,4 @@ My extensive background in Digital and Agile Delivery enables me to understand t
 
 I am currently working at Aussie broadcaster, SBS (Special Broadcasting Service). My main focus is on the website and APIs supporting the flagship video streaming platform, <a href="https://www.sbs.com.au/ondemand" aria-label="SBS On Demand">SBS On Demand</a>, which is available on a range of Web, Mobile, Smart TVs and Set Top Box platforms and serves over 11000+ hours of content to over 1 million active viewers per month. 
  
-Outside of digital life you can find me either running, lifting, baking (Banana Bread is my specialty!) or attempting to electro shuffle.
+Outside of digital life you can find me either running, lifting or baking (Banana Bread is my specialty!)

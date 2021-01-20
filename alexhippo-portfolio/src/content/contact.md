@@ -1,8 +1,12 @@
 ---
 title: "contact"
 ---
-I'd love to hear from you! Feel free to email me or hit me up on one of my social networks (opens in a new window):
-<a href="mailto:alexheepo@gmail.com" target="_blank">Email</a>
-<a href="https://linkedin.com/alexhippo" target="_blank">LinkedIn</a>
-<a href="https://github.com/alexhippo" target="_blank">Github</a>
-<a href="https://www.freecodecamp.org/alexhippo" target="_blank">freeCodeCamp</a>
+I'd love to hear from you! Feel free to email me or hit me up on one of my social networks.
+
+<a href="mailto:alex.hipolito@outlook.com?subject=Enquiry about Alex Hipolito Portfolio Website" target="_blank">Email</a>
+
+[LinkedIn](https://www.linkedin.com/in/alexhippo/)
+
+[Github](https://github.com/alexhippo)
+
+[freeCodeCamp](https://www.freecodecamp.org/alexhippo)

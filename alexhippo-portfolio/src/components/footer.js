@@ -21,7 +21,8 @@ const Footer = () => (
   <StyledFooter>
        <span role="img" aria-label="copyright">©️</span>
        &nbsp;
-       Alex Hipolito 2020. 
+       Alex Hipolito {(new Date().getFullYear())}.
+
        Made with&nbsp;<span role="img" aria-label="love" alt="love emoji">💖</span>&nbsp;and&nbsp;<span role="img" aria-label="coffee" alt="coffee emoji">☕</span>
   </StyledFooter>
 )
