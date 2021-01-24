@@ -30,6 +30,22 @@ const StyledSection = styled.section`
         margin: 0 auto;
         padding: 0 2.5rem;
     }
+    .downloadResume {
+        text-align: center;
+        padding-bottom: 10px;
+    }
+    a.downloadResume{
+        text-decoration: none;
+        color: #fff;
+        &hover: {
+            font-weight: 200 !important;
+        }
+    }
+    span.personalTitle {
+        margin-left: 10px;
+        color: #767676;
+        font-weight: 700;
+    }
 `
 
 export const Resume = ({ content }) => {
@@ -111,7 +127,7 @@ export const Resume = ({ content }) => {
                 {frontmatter.title}
             </h2>
             <div className="downloadResume">
-                <Button download href={resume} size="lg" variant="secondary" className="downloadResume">Download {frontmatter.title} in PDF format</Button>
+                <Button download href={resume} size="lg" variant="secondary" className="downloadResume">download {frontmatter.title} in PDF format</Button>
             </div>
             <div className="description">
                 <h3>Experience</h3>

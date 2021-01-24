@@ -2,8 +2,7 @@ import React from "react"
 import PropTypes from 'prop-types'
 
 export const ResumeEduCard = ({ content }) => {
-    const { html, frontmatter, rawMarkdownBody } = content
-    const formattedDescription = rawMarkdownBody.split(`\n\n`).map(paragraph => `<p>${paragraph.replace(/\n/g, `<br>`)}</p>`).join(``); 
+    const { html, frontmatter } = content
 
     return (
         <div>
@@ -22,8 +21,6 @@ export const ResumeEduCard = ({ content }) => {
             </div>
             <p dangerouslySetInnerHTML={{ __html: html }} />
         </div>
-
-
     ) 
 }
 

@@ -19,14 +19,6 @@ const StyledSection = styled.section`
     a {
         text-decoration: underline;
     }
-    .description {
-        width: 100%;
-        float: none;
-        max-width: 62.5rem;
-        margin: 0 auto;
-        padding: 0 2.5rem;
-        text-align: center;
-    }
 `
 
 export const Portfolio = ({ content }) => {

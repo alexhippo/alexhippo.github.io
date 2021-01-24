@@ -8,6 +8,7 @@ import About from "../components/about"
 import Portfolio from "../components/portfolio"
 import Resume from "../components/resume"
 import Contact from "../components/contact"
+import SEO from "../components/seo"
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -15,6 +16,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const IndexPage = ({data}) => {
   return (
     <Layout>
+      <SEO />
       <Hero content={data.hero.edges[0].node} />
       <About content={data.about.edges[0].node} />
       <Portfolio content={data.portfolio.edges[0].node} />
@@ -47,6 +49,7 @@ export const query = graphql`
   about: allMarkdownRemark(filter: {frontmatter: {about: {eq: "a little bit about me"}}}) {
     edges {
       node {
+        html
         frontmatter {
           about
         }

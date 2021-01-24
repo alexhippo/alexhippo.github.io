@@ -11,22 +11,22 @@ const StyledLogo = styled.div`
   color: black;
   font-family: 'Miriam Libre', sans-serif;
   padding-right: 20px;
-  &hover: {color: black;}
+  &hover: {color: black}
 `
 
 const Header = () => {
   return (
-    <Navbar expand="lg" className="navbar" sticky="top" role="navigation" id="header">
+    <Navbar expand="lg" className="navbar" fixed="top" role="navigation" id="header">
       <StyledLogo>
-        <Nav.Link href="/">alexhipolito</Nav.Link>
+        <Nav.Link href="#hero">alexhipolito</Nav.Link>
       </StyledLogo>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="#about">about</Nav.Link>
-          <Nav.Link href="#portfolio">portfolio</Nav.Link>
-          <Nav.Link href="#resume">résumé</Nav.Link>
-          <Nav.Link href="#contact">contact</Nav.Link>
+          <Nav.Link href="#about" style={{color: '#000'}}>about</Nav.Link>
+          <Nav.Link href="#portfolio" style={{color: '#000'}}>portfolio</Nav.Link>
+          <Nav.Link href="#resume" style={{color: '#000'}}>résumé</Nav.Link>
+          <Nav.Link href="#contact" style={{color: '#000'}}>contact</Nav.Link>
         </Nav>
       </Navbar.Collapse>
   </Navbar>

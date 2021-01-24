@@ -16,18 +16,10 @@ const StyledSection = styled.section`
     a {
         text-decoration: underline;
     }
-    .description {
-        width: 100%;
-        float: none;
-        max-width: 62.5rem;
-        margin: 0 auto;
-        padding: 0 2.5rem;
-    }
 `
 
 export const About = ({ content }) => {
-    const { frontmatter, rawMarkdownBody } = content
-    const formattedDescription = rawMarkdownBody.split(`\n\n`).map(paragraph => `<p>${paragraph.replace(/\n/g, `<br>`)}</p>`).join(``); 
+    const { frontmatter, html } = content
 
     const data = useStaticQuery(graphql`
         query {
@@ -56,7 +48,7 @@ export const About = ({ content }) => {
                         borderRadius: '200px',
                         margin: '0 auto 10px'
                 }} />
-                <p dangerouslySetInnerHTML={{ __html: formattedDescription }} />            
+                <p dangerouslySetInnerHTML={{ __html: html }} />            
             </div>
         </StyledSection>
     ) 

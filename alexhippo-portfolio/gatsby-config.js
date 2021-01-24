@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Alex Hipolito | Based in Sydney, Australia | Web Development, Test Automation, Agile Delivery`,
-    description: `Portfolio of Alex`,
+    title: `Alex Hipolito - Web Developer & QA Engineer based in Sydney, Australia`,
+    description: `Alex Hipolito is a Web Developer based in Sydney, Australia.`,
     author: `@alexhippo`,
+    keywords: `web developer software engineer quality engineer sydney australia women in tech javascript react cypress`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
