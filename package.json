@@ -64,7 +64,8 @@
     "test": "jest",
     "test:e2e": "cypress run --browser chrome --headless",
     "test:e2e:ff": "cypress run --browser firefox --headless",
-    "test:e2e:ci": "start-server-and-test develop http://localhost:8000 test:e2e"
+    "test:e2e:ci": "start-server-and-test develop http://localhost:8000 test:e2e",
+    "deploy": "gatsby build && gh-pages -d public -b master"
   },
   "repository": {
     "type": "git",
