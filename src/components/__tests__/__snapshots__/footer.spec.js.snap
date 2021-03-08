@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer renders correctly 1`] = `
+<footer
+  className="sc-bdfBwQ eUOSHp"
+>
+  <span
+    aria-label="copyright"
+    role="img"
+  >
+    ©️
+  </span>
+    Alex Hipolito 
+  2021
+  . Made with 
+  <span
+    alt="love emoji"
+    aria-label="love"
+    role="img"
+  >
+    💖
+  </span>
+   and 
+  <span
+    alt="coffee emoji"
+    aria-label="coffee"
+    role="img"
+  >
+    ☕
+  </span>
+</footer>
+`;
