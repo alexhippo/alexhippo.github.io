@@ -3,7 +3,7 @@ id: "simongame"
 title: "Simon Game"
 tech: "Javascript, HTML, CSS"
 thumbnail: './simongame.png'
-link: "https://alexhippo.github.io/projects/simongame/"
+link: "https://alexhippo.github.io/simongame/"
 github: "https://github.com/alexhippo/simongame"
 imgAlt: "Screenshot of Simon Game"
 ---
